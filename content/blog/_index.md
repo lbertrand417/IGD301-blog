@@ -1,4 +1,4 @@
 ---
-author: Katheryn Fox
+author: Lauriane Bertrand
 title: Blog
 ---

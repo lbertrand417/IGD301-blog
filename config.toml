@@ -1,15 +1,17 @@
 baseURL = 'https://lbertrand417.github.io/IGD301-blog'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'IGD301 - Blog'
 theme = "blist"
 publishDir = "docs"
 
 contentDir = "content" #English
 
+# Enable emoji
+enableEmoji = true
+
 [params]
-  introTitle = "Hey! I'm Katheryn Fox"
-  introSubtitle = "26 y/o junior developer who enjoys social card games, blogging and painting"
-  introPhoto = "/picture.jpg"
+  introTitle = "Hey! I'm Lauriane Bertrand"
+  introSubtitle = "This blog will present my work during the IGD301 course of Telecom Paris. Hope you enjoy!"
 
   # Enable the darkmode toggle in header
   darkModeToggle = true
@@ -18,7 +20,7 @@ contentDir = "content" #English
   enableSearch = true
 
   # Custom copyright - optional
-  copyright = "Copyright © 2021 - Katheryn Fox · All rights reserved"
+  copyright = "Copyright © 2021 - Lauriane Bertrand · All rights reserved"
   favicon = "/favicon.svg"
 
   # Color for the intro details and social links block, not applicable for dark mode
@@ -29,14 +31,9 @@ contentDir = "content" #English
 [params.homepage.social]
   # Global params xommon for both languages
   title = "Follow me"
-  description = "I work on everything coding and tweet developer memes"
-  twitter = "https://twitter.com/"
-  linkedin = "https://linkedin.com/in/"
-  xing = "https://www.xing.com/profile/"
-  github = "https://github.com/"
-  medium = "https://medium.com/"
-  reddit = "https://reddit.com/"
-  dribbble = "https://dribbble.com/"
+  description = "I'm an engineer student in computer graphics"
+  linkedin = "https://www.linkedin.com/in/lauriane-b-6b1064152/"
+  github = "https://github.com/lbertrand417"
 
 [[menu.main]]
   name = "Blog"

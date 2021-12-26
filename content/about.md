@@ -1,7 +1,7 @@
 ---
-author: Katheryn Fox
+author: Lauriane Bertrand
 title: About Me
-date: 2021-07-15
+date: 2021-11-23
 description:
 keywords: ["about-us", "about-hugo", "contact"]
 type: about

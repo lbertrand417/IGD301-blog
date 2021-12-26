@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on IGD301 - Blog</title>
+    <link>https://lbertrand417.github.io/IGD301-blog/tags/unity/</link>
+    <description>Recent content in Unity on IGD301 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lbertrand417.github.io/IGD301-blog/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First lab</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/lab1/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/lab1/</guid>
+      <description>Lecture Homework Lab Homework Setup blog The teachers recommended Hugo to write our blog but we were free to choose another tool if we wanted. I had already created a sort of eportfolio on wix and could have continued to use that but Hugo seems to be a much more complete tool, albeit more complex. That&amp;rsquo;s why I decided to learn how to use Hugo. The installation was quite difficult but finally I managed to get the result I wanted.</description>
+    </item>
+    
+  </channel>
+</rss>
