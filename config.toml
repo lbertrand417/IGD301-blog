@@ -11,7 +11,7 @@ enableEmoji = true
 
 [params]
   introTitle = "Hey! I'm Lauriane Bertrand"
-  introSubtitle = "This blog will present my work during the IGD301 course of Telecom Paris. Hope you enjoy!"
+  introSubtitle = "This blog will present my work during the IGD301 course of Telecom Paris. Hope you enjoy! :heart:"
 
   # Enable the darkmode toggle in header
   darkModeToggle = true

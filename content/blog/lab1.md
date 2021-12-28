@@ -41,4 +41,8 @@ Well, I created the git including all the folders so I ended up adding everythin
 The problem is that I can't find the folder where the html pages are supposed to be. I added the line publishDir = "docs" but no file appears in the folder. 
 I must have made a mistake somewhere but at the time of writing I have not yet solved the problem.
 
+## Setup Unity
+
+This part is easier because I already used Unity for old projects. Wait, did you say easier? Well, I didn't count on the fact that I don't have any more 
+space on my computer and that the version we have to use is not the same as in the other courses! Good good good.... I leave you I must go to free up some space on my computer.
 
