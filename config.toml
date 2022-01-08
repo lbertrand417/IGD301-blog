@@ -5,6 +5,7 @@ theme = "blist"
 publishDir = "docs"
 
 contentDir = "content" #English
+staticDir = ['static']
 
 # Enable emoji
 enableEmoji = true

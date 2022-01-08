@@ -4,10 +4,41 @@ date: 2021-11-27
 draft: false
 description: "Setup Hugo and Unity"
 tags: ["Hugo", "Unity", "Setup"]
-thumbnail: https://avatars.githubusercontent.com/u/29385237?s=280&v=4
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Logo_of_Hugo_the_static_website_generator.svg/1024px-Logo_of_Hugo_the_static_website_generator.svg.png
 ---
 
 # Lecture Homework
+
+## Hyper reality
+
+Mixed reality can improve a lot of tools, like google maps or, more generally, the way to present information. However, just as there are people who use technologies to do harm, 
+mixed reality is also subject to abuse. The Hyper Reality video presents a dystopian vision of virtual reality and I will also present different problematic scenarios.
+
+### Holo love
+
+As it is already the case with existing technologies, social networks tend to transform relationships into something virtual. People don't talk to each other on the street anymore, 
+they look at their phones and talk with people who may be on the other side of the country. Also, more and more people are meeting on dating apps and not in real life activities.
+Now, imagine a world where dating apps are adapted to mixed reality. More than that, the user could create his own partner and do all sorts of activities with him.  
+There would be a huge problem in reproduction, as it already exists in Japan. People would close themselves in their world, with their virtual partner. 
+Indeed, why bother building relationships when you can create your own ideal partner? People would then live in a world separated from reality and would only have relationships 
+with avatars invented from scratch. 
+
+![Hologram partner](https://www.netflix-news.com/wp-content/uploads/2020/02/AAAABR2L3ufHGj-Z3TkyeQU2egWzFD5Oe6dhx5pTWDXDRqe3oyedyz-3E8mFcUAFOVp0aKBhWfSN3D-Zg1l6oFlETPtJYFmvvZ-oP8J_UA1S6rdqBDQe4CjCOMq8gIxsA.jpg "Hologram partner")
+
+The worst part is that this scenario is already happening to some extent. I talked earlier about social networks and relationships becoming virtual, 
+but this is still an interaction with existing people. However, there are already holograms with the purpose of keeping company with people who feel lonely, like Gatebox. 
+The technology is not yet transportable but it is only a matter of time. These apps have positive aspects as it can help people who need it, but the risk is that they remain locked in this 
+utopia because they feel reassured and comfortable. If the technology is transportable, these people will be completely cut off from the rest of the world.
+
+![Gatebox](https://helios-i.mashable.com/imagery/articles/04K1LWDkuwBfojQt0CO1SUL/hero-image.fill.size_1248x702.v1611614804.png "Gatebox")
+
+In order to prevent the world from taking this turn, we could consider prohibiting specific applications in certain places. 
+For example, entering a workplace would close all social applications (except those needed for work), to encourage real interactions between colleagues. 
+
+### Safety issues
+
+
+
 
 # Lab Homework
 
@@ -41,8 +72,16 @@ Well, I created the git including all the folders so I ended up adding everythin
 The problem is that I can't find the folder where the html pages are supposed to be. I added the line publishDir = "docs" but no file appears in the folder. 
 I must have made a mistake somewhere but at the time of writing I have not yet solved the problem.
 
+Update: Well I was a little bit stupid, I was trying to create the files using the "hugo server -D" command instead of the "hugo" command. Nevermind, now it works. I created a git with
+the docs folder and now you can admire this wonderful blog!
+
 ## Setup Unity
 
 This part is easier because I already used Unity for old projects. Wait, did you say easier? Well, I didn't count on the fact that I don't have any more 
 space on my computer and that the version we have to use is not the same as in the other courses! Good good good.... I leave you I must go to free up some space on my computer.
+
+[1 week later]
+
+I'm back! Finally I have enough space (and an internet connection) so I managed to download the correct Unity version. Nothing much to say about it so let's meet again in the next post
+to create our first project!
 

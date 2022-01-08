@@ -10,8 +10,8 @@
   </title>
   <meta name="description" content="VR Locomotion" /><meta name="generator" content="Hugo 0.91.1" /><link
     rel="stylesheet"
-    href="https://lbertrand417.github.io/IGD301-blog/css/styles.min.ec74fb9ae48870580dc874ccf8bfe4deeca40b53c72d25f2647e3d8f80a22eef.css"
-    integrity="sha256-7HT7muSIcFgNyHTM+L/k3uykC1PHLSXyZH49j4CiLu8="
+    href="https://lbertrand417.github.io/IGD301-blog/css/styles.min.0329d07cf5e07cd52141990c36f0feb8332eddb71a5c450ee2d65d94eedccf7d.css"
+    integrity="sha256-AynQfPXgfNUhQZkMNvD+uDMu3bcaXEUO4tZdlO7cz30="
   />
   
   
@@ -31,7 +31,7 @@
   <meta itemprop="name" content="Third lab">
 <meta itemprop="description" content="VR Locomotion"><meta itemprop="datePublished" content="2021-12-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="8">
+<meta itemprop="wordCount" content="1506">
 <meta itemprop="keywords" content="Locomotion,VR," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
@@ -89,7 +89,7 @@
 
   
   <div class="relative max-w-5xl mx-auto px-4">
-    <img src="https://avatars.githubusercontent.com/u/29385237?s=280&amp;v=4" class="rounded-lg shadow-sm w-full object-contain" />
+    <img src="https://l3apq3bncl82o596k2d1ydn1-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/KATloco_5.jpg" class="rounded-lg shadow-sm w-full object-contain" />
     <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
       
   
@@ -127,7 +127,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      1&nbsp;minutes
+      8&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,12 +137,110 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      8&nbsp;words
+      1506&nbsp;words
       
     </h5>
 
-    <p>Water &ndash;&gt; swim with controlers
-Canoe &ndash;&gt; pagayer</p>
+    <h1 id="lecture-homework">Lecture Homework</h1>
+<p>The goal of this homework is to propose different types of locomotion techniques to naviguate in the virtual environment.</p>
+<h2 id="swimming-locomotion">Swimming locomotion</h2>
+<p><img src="https://cdn.akamai.steamstatic.com/steam/apps/422760/ss_0bf5988da6f464d136e1f1e92506f8a71907f9d7.1920x1080.jpg?t=1517860245" alt="Ocean" title="Ocean"></p>
+<p>I want to design a locomotion technique that could be used in an aquatic environment.
+The purpose of my locomotion is to move freely in the water and enjoy the environment.
+It is therefore more suitable for underwater exploration games, without stress or constraints,
+even if we could imagine more complex scenarios (speed game where you have to escape from a shark, underwater escape game,&hellip;).
+And what better movement than the breaststroke to explore the sea bed? No need to move your feet, you just have to use your hands and draw circles, as for a breaststroke movement.
+We could use the tracking of the remote controls to obtain the position of the hands and the speed of the movement and thus deduce the speed of the movement in the virtual environment.
+The disadvantage of this locomotion technique is that the user does not really move in the real world, which can lead to motion sickness.
+However, Minority Media discovered that moving in water doesn&rsquo;t cause as much motion sickness as walking on the ground. Hence, we can restrict the motion to only arm movements.
+Furthermore, we could even adapt this locomotion technique to other environments such as flying in the sky, a bit like Peter Pan.</p>
+<p>Below, an example of breaststroke motion in a VR environment:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/C4eu0saLiOQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>To evaluate the quality of the locomotion technique, we could compare the motion sickness felt during a standard movement on the ground and our breaststroke movement in water.
+The metrics to collect are speed, ease of learning, ease of use and presence. Indeed, the movement made by the user must be coherent with the generated displacement so we must study the speed.
+Moreover, I focused on exploration games, so it is important that the locomotion technique is instinctive and easy to use.
+In this sense, the fact that the movement is inspired by a breaststroke movement makes it easier to learn.
+Finally, the presence is a very important criterion since the main goal of exploration games is to be completely immersed in the environment.</p>
+<h2 id="paddle-locomotion">Paddle locomotion</h2>
+<p><img src="https://www.realite-virtuelle.com/wp-content/uploads/2021/07/Kayak_VR_image3-1024x576-1.jpg" alt="Paddle" title="Paddle"></p>
+<p>In this scenario we try to find an adequate locomotion technique to play in small spaces. Indeed, many users (myself included) don&rsquo;t have enough space in their house to move around.
+So we have to find a way of locomotion in the virtual environment that leaves the user static in the real environment. To stay in the aquatic theme, we will try to move on water.
+If we imagine the user in a boat, a canoe, a kayak,&hellip; we can use the hand controllers to imitate the movement that we make when we row, which we add to the &ldquo;automatic&rdquo; motion due to the current.
+The movement uses the controlers as well and the motion path depends on the type of oar used.</p>
+<ul>
+<li>One oar with one flat blade</li>
+</ul>
+<p>If the user has only one oar with both hands are on the same oar, the movement should be straight on the side of the oar.</p>
+<p><img src="https://cdn.dribbble.com/users/230073/screenshots/3780396/kayak8.gif" alt="One oar" title="One oar"></p>
+<ul>
+<li>Two oars</li>
+</ul>
+<p>If there are two oars (one per hand), the user must do a circular movement on the desired side or on both sides to go straight.</p>
+<p><img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3ae4f472574477.5bec032ec5810.gif" alt="Two oars" title="Two oars"></p>
+<ul>
+<li>One oar with two flat blades</li>
+</ul>
+<p>If there is a large oar with two flat blades, the user must do a 8 move to go straight. If we wants to turn he can do the same motion like for the one oar with one flat blade one.</p>
+<p><img src="https://i.pinimg.com/originals/ef/d8/16/efd816c1af96ef7b6e0196e3eecaba89.gif" alt="One oar with 2 flat blades" title="One oar with 2 flat blades"></p>
+<p>Note that this motion can be used in other cases than rowing. In skiing, the movement to push on the poles is very similar and we could therefore adapt our locomotion technique to this activity.</p>
+<p>The concern with this move is that it can make you sick, as the user remains static. Especially if there are rapids in the game and he moves quickly in the game.
+If it were possible, the best solution to solve this problem would be to use a fake boat, which vibrates and moves according to the movements in the game like the example below.</p>
+<p><img src="https://www.vr-show.fr/wp-content/uploads/2020/01/Animation-simulateur-Kayak-VR.jpg" alt="Kayak simulator" title="Kayak simulator"></p>
+<p>For places that have enough space we could further improve the movement by allowing the user to use a handle (a broom handle for example) and hang the controlers on it so that the movement seems more realistic.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/UZqK1qzkWUI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>The metrics to evaluate would be accuracy as the direction should be coherent with the motion of the user, the spatial awareness because we use a smooth locomotion technique,
+information gathering and presence. Presence is a really important metric as it is the reason which researchers develop smooth locomotion technique even if it induces
+motion sickness. Thus, we also need to evaluate motion sickness as the user doesn&rsquo;t move as much in the real world as in the virtual world.</p>
+<h2 id="teleportation-ball">Teleportation ball</h2>
+<p>The locomotion technique is different from the two previous ones because it is inspired by teleportation.
+As you know, moving in the virtual environment without moving in the real world can cause nausea and headaches.
+What could be more unpleasant than being sick while playing! I myself have experienced this kind of symptoms while playing and it is really annoying.
+The teleportation allows to suppress this motion sickness since you don&rsquo;t move in the virtual world. However, the presence is less good since it doesn&rsquo;t represent the reality.
+In order to make up for the lack of presence I looked for a way to make teleportation more attractive. For that I tried to make teleportation a game in its own.
+I was inspired by the game spell &lsquo;n&rsquo; stuff which uses objects to move.</p>
+<p><img src="http://localhost:1313/IGD301-blog/spell_n_stuff.gif" alt="Spell &lsquo;n&rsquo; stuff"></p>
+<p>The idea is to throw an object and the player will be teleported to the place where the object lands.
+However, the game also uses smooth locomotion techniques to fly, which can cause motion sickness. Thus for my project, I restricted myself to teleportation only.
+The user has access to different balls with different properties: a petanque ball, a bouncing ball and a sticky ball. Each ball being different,
+it is better to use a specific ball according to the context. The petanque ball does not allow to go far but allows to be quite precise,
+the bouncing ball allows to move very far but has a bad precision and the sticky ball can be used for hard-to-reach places but does not allow to go far.
+This idea is quite extensible because we can imagine many other kinds of balls, even balls requiring other objects like a golf ball or a pistol ball.</p>
+<ul>
+<li>Petanque ball</li>
+</ul>
+<p><img src="http://localhost:1313/IGD301-blog/petanque_ball.gif" alt="Petanque ball"></p>
+<ul>
+<li>Bouncing ball</li>
+</ul>
+<p><img src="http://localhost:1313/IGD301-blog/bouncing_ball_compresse.gif" alt="Bouncing ball"></p>
+<ul>
+<li>Sticky ball</li>
+</ul>
+<p><img src="http://localhost:1313/IGD301-blog/sticky_ball_compresse.gif" alt="Sticky ball"></p>
+<p>To change balls I have two ideas in mind. The first one would be that the user has all the balls available on his belt and can take the one he wants to use.
+The other idea would be to use a button to change the ball, with a temporary display on a canvas in front of the user to indicate which ball he has in his hand.
+The first idea seems better in terms of presence because the user could interact with a virtual body but the second one allows to create an unlimited number of ball types.
+The user should also be able to exchange the hand ball according to his preference using a button.
+Finally, I imagined that the user has to press a button to actually teleport at the ball&rsquo;s position so that if the throw is bad he can try again.</p>
+<p>Regarding the movement that the user has to do, I imagined that he has to simulate a ball launch, without having to press any buttons.
+However, due to the limitations of the headset camera field, this seems complicated. That&rsquo;s why I think that the user will have to press a button
+(the trigger for example) at the moment when the ball should be thrown. Also, to make the game easier it could be interesting to show the future trajectory of the ball before the throw.
+In this case, instead of using the acceleration of the controller at the moment of the throw, we would use only the position of the controller and we would deduce the force of the throw.
+Thus, whatever the way the user throws the ball, it will go to the indicated point.</p>
+<p><img src="http://localhost:1313/IGD301-blog/throw_ball.gif" alt="Throw ball"></p>
+<p><img src="http://localhost:1313/IGD301-blog/bowling.gif" alt="Bowling ball"></p>
+<p>Concerning the evaluation of the locomotion method, I would like to evaluate the fun of the user through a questionnaire and compare it to the fun of a simple teleportation.
+I also want to study the ease of learning and ease of use, which are two criteria related to fun. Indeed, if the tool is too hard or too easy to learn or use it becomes less fun.
+Finally, I want to study the precision since the goal is to have more or less precise balls according to their type.
+For this, I could ask the user to try to aim at an area and evaluate the success rate according to the type of ball.</p>
 
   </article><div class="bg-blue-100 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
