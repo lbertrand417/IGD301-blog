@@ -103,7 +103,7 @@ This idea is quite extensible because we can imagine many other kinds of balls, 
 
 - Petanque ball
 
-![Petanque ball](http://localhost:1313/IGD301-blog/petanque_ball.gif)
+![Petanque ball](http://lbertrand417.github.io/IGD301-blog/petanque_ball.gif)
 
 - Bouncing ball
 
