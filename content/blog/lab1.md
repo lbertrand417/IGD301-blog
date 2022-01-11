@@ -23,7 +23,7 @@ There would be a huge problem in reproduction, as it already exists in Japan. Pe
 Indeed, why bother building relationships when you can create your own ideal partner? People would then live in a world separated from reality and would only have relationships 
 with avatars invented from scratch. 
 
-![Hologram partner](https://www.netflix-news.com/wp-content/uploads/2020/02/AAAABR2L3ufHGj-Z3TkyeQU2egWzFD5Oe6dhx5pTWDXDRqe3oyedyz-3E8mFcUAFOVp0aKBhWfSN3D-Zg1l6oFlETPtJYFmvvZ-oP8J_UA1S6rdqBDQe4CjCOMq8gIxsA.jpg "Hologram partner")
+![Hologram partner](http://lbertrand417.github.io/IGD301-blog/holo_love.png "Hologram partner")
 
 The worst part is that this scenario is already happening to some extent. I talked earlier about social networks and relationships becoming virtual, 
 but this is still an interaction with existing people. However, there are already holograms with the purpose of keeping company with people who feel lonely, like Gatebox. 

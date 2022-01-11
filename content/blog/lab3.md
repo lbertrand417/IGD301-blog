@@ -91,7 +91,7 @@ In order to make up for the lack of presence I looked for a way to make teleport
 I was inspired by the game spell 'n' stuff which uses objects to move. 
 
 
-![Spell 'n' stuff](http://localhost:1313/IGD301-blog/spell_n_stuff.gif)
+![Spell 'n' stuff](http://lbertrand417.github.io/IGD301-blog/spell_n_stuff.gif)
 
 
 The idea is to throw an object and the player will be teleported to the place where the object lands. 
@@ -107,11 +107,11 @@ This idea is quite extensible because we can imagine many other kinds of balls, 
 
 - Bouncing ball
 
-![Bouncing ball](http://localhost:1313/IGD301-blog/bouncing_ball_compresse.gif)
+![Bouncing ball](http://lbertrand417.github.io/IGD301-blog/bouncing_ball_compresse.gif)
 
 - Sticky ball
 
-![Sticky ball](http://localhost:1313/IGD301-blog/sticky_ball_compresse.gif)
+![Sticky ball](http://lbertrand417.github.io/IGD301-blog/sticky_ball_compresse.gif)
 
 To change balls I have two ideas in mind. The first one would be that the user has all the balls available on his belt and can take the one he wants to use. 
 The other idea would be to use a button to change the ball, with a temporary display on a canvas in front of the user to indicate which ball he has in his hand. 
@@ -125,9 +125,9 @@ However, due to the limitations of the headset camera field, this seems complica
 In this case, instead of using the acceleration of the controller at the moment of the throw, we would use only the position of the controller and we would deduce the force of the throw. 
 Thus, whatever the way the user throws the ball, it will go to the indicated point.
 
-![Throw ball](http://localhost:1313/IGD301-blog/throw_ball.gif)
+![Throw ball](http://lbertrand417.github.io/IGD301-blog/throw_ball.gif)
 
-![Bowling ball](http://localhost:1313/IGD301-blog/bowling.gif)
+![Bowling ball](http://lbertrand417.github.io/IGD301-blog/bowling.gif)
 
 Concerning the evaluation of the locomotion method, I would like to evaluate the fun of the user through a questionnaire and compare it to the fun of a simple teleportation. 
 I also want to study the ease of learning and ease of use, which are two criteria related to fun. Indeed, if the tool is too hard or too easy to learn or use it becomes less fun. 

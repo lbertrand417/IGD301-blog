@@ -31,7 +31,7 @@
   <meta itemprop="name" content="Second lab">
 <meta itemprop="description" content="Roll-a-ball"><meta itemprop="datePublished" content="2021-12-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="98">
+<meta itemprop="wordCount" content="909">
 <meta itemprop="keywords" content="Unity,VR,Tutorial,Roll-a-ball," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
@@ -127,7 +127,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      1&nbsp;minutes
+      5&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,7 +137,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      98&nbsp;words
+      909&nbsp;words
       
     </h5>
 
@@ -145,7 +145,69 @@
 <p>It&rsquo;s time to create the first Unity project! The teachers initially asked us to follow the Roll-a-ball tutorial but to test other more complex tutorials
 in case we were already familiar with Unity. I had already used Unity for previous projects but I found that I was still very new to the software so
 I preferred to follow the Roll-a-ball tutorial anyway to get a good start.</p>
-<p>The tutorial is mostly about following the tutorial so there is not really much to explain. I&rsquo;m going to tell you a little bit about the different steps to follow.</p>
+<p>The tutorial is mostly about following the tutorial so there is not really much to explain. I&rsquo;m going to tell you a little bit about the different steps to follow.
+I&rsquo;m not going to explain the steps in the order in which I followed them but rather I&rsquo;ll separate the Scene part from the Scripts part.</p>
+<h2 id="create-a-unity-project">Create a Unity project</h2>
+<p>The first step is to create a Unity project. To do this we select the type of project (here, a 3D project), its name and its location.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/begin_project.png" alt="Project"></p>
+<h2 id="create-the-scene">Create the scene</h2>
+<p>Once the project is created, the first step is to create the scene. To do the ground we create a GameObject plane,
+which we resize to the desired size. Unity also allows you to create materials, which you can then add to GameObjects in order to
+give them particular properties (here a blue color to the ground).</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/plane_setup2.png" alt="Plane"></p>
+<p>In the same way we create the ball (which represents the player here).</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/balle_setup.png" alt="Ball"></p>
+<p>For walls, the easiest way is to first create an Empty GameObject and then create GameObjects that will be children of it.
+This creates a hierarchy and makes both the code and the scene easier to understand. The wall itself is composed of 4 cubes that have been deformed and rotated.
+To go faster, just create one of the 4 walls and then duplicate it and move and rotate it.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/walls_setup.png" alt="Walls"></p>
+<p>Finally, for the objects to catch we use a GameObject cube. Here, unlike the previous objects, we use a Prefab,
+which allows us to modify all the copies of this Prefab. Thus, all the pick-ups of the scene are only duplicates of this Prefab
+and therefore if we change a property (for example, the size or the color) all the instances will be modified too.
+This is a very powerful tool that should not be missed.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/pickups_setup.png" alt="Pick-ups"></p>
+<p>Also, don&rsquo;t forget to adjust the light and camera parameters, so that the scene is well visible.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/light_setup.png" alt="Lights"></p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/camera_setup.png" alt="Camera"></p>
+<p>One last thing that can be added is text allowing the user to track his score in real time and know when he wins.
+For this we use a canvas which will display/update the text depending on the state of the game.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/canvas_setup.png" alt="Canvas"></p>
+<h2 id="add-scripts">Add scripts</h2>
+<p>Now that our scene is complete it&rsquo;s time add so functionalities to our GameObjects.</p>
+<p>The ball is a solid object subject to physics. Therefore, it must have a Collider as well as a RigidBody.
+Moreover, we want the ball to move thanks to the user. For this we need to add an extra package, called Input System.
+This package has the PlayerInput script which allows to manage the user&rsquo;s input. Here it uses the arrows to move the ball.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/package.png" alt="Package"></p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/player_input.png" alt="Player Input"></p>
+<p>Now we have to actually move the ball. For this we create a new PlayerController script. In it,
+we instantiate a function that retrieves the user&rsquo;s input in order to determine the movement of the ball, then we update the movement thanks to the RigibBody.</p>
+<p>Now that the ball is moving, we have to manage the collision between it and the other objects.
+As it collides with all the other objects they must all contain a Collider (it is added by default when we create the GameObject).
+However the collision with the pickups is different. We want :</p>
+<ul>
+<li>The pickup disappears</li>
+<li>The counter increases</li>
+</ul>
+<p>To do this we will add a tag to the pickup prefab, which will allow us to separate the pickups from the other objects.
+Then we just have to study the object in contact with our ball. If it has the tag &ldquo;pickups&rdquo; then we must make the object disappear, increment the counter and update
+the display on the canvas.</p>
+<p>When the user has caught 30 or more objects, he/she has won and &ldquo;You win!&rdquo; is then displayed on the canvas.</p>
+<p>You can find the final code of the PlayerController script below</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/player_controller3.png" alt="Player Controller"></p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/player_controller4.png" alt="Player Controller"></p>
+<p>Now we have to deal with the pick-ups. First of all, they are also RigidBody so we need to add the component.
+However, unlike the ball, they are not subject to gravity so we need to uncheck the associated box.
+We must also check the isTrigger box of the collider so that the ball can interact with the pick-ups without colliding, as well as the isKinematic box of RigidBody.
+This last box allows the objects not to react to collisions and forces.</p>
+<p>We also want to make the pick-ups a little more dynamic. To do this, we create a new Rotator script that we attach to the Prefab (not to the objects themselves!).
+This script will only make a rotation at each update.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/rotator.png" alt="Rotator"></p>
+<p>Finally we want the camera to follow the movement of the ball.</p>
+<p>So we have to create a last script, attached to the camera. The function calculates the offset between the camera and the ball at the beginning of the game
+and makes sure that this offset is constant throughout the game.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/camera_controller.png" alt="Camera Controller"></p>
+<p>The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.</p>
+<p><img src="https://raw.githubusercontent.com/ruthnaebeck/rollABall/master/readme/Demo.gif?raw=true" alt="Game result"></p>
 
   </article><div class="bg-blue-100 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
