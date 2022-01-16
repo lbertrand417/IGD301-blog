@@ -23,7 +23,7 @@ There would be a huge problem in reproduction, as it already exists in Japan. Pe
 Indeed, why bother building relationships when you can create your own ideal partner? People would then live in a world separated from reality and would only have relationships 
 with avatars invented from scratch. 
 
-![Hologram partner](http://lbertrand417.github.io/IGD301-blog/holo_love.png "Hologram partner")
+![Hologram partner](http://lbertrand417.github.io/IGD301-blog/holo_love.jpg "Hologram partner")
 
 The worst part is that this scenario is already happening to some extent. I talked earlier about social networks and relationships becoming virtual, 
 but this is still an interaction with existing people. However, there are already holograms with the purpose of keeping company with people who feel lonely, like Gatebox. 
@@ -35,9 +35,31 @@ utopia because they feel reassured and comfortable. If the technology is transpo
 In order to prevent the world from taking this turn, we could consider prohibiting specific applications in certain places. 
 For example, entering a workplace would close all social applications (except those needed for work), to encourage real interactions between colleagues. 
 
-### Safety issues
+### Differentiate real from virtual
+
+Let's imagine again a world where everyone uses mixed reality. It's very practical for everyday life, especially for classes. 
+No more need to carry heavy textbooks, no more need to come to class, everything can be done remotely. We live with mixed reality from an early age. 
+Do you see the problem coming? A child, whose brain is still developing, has mixed reality as part of his reality. Unlike adults who can distinguish 
+between "real" reality and mixed reality, a child bathed in this world may not be able to distinguish the two! He will no longer be able to differentiate 
+fantasy from reality, which is a real problem for his future development in the real world. One solution could be to limit or even prohibit the use of 
+mixed reality under a certain age. A kind of computer majority in a way. 
+
+![Children and mixed reality](http://lbertrand417.github.io/IGD301-blog/children_mixed_reality.jpg "Children and mixed reality")
+
+## Ultimate display
+
+![Children and mixed reality](https://images.prismic.io/add2020/684383c1-6459-4d0d-a22e-460db5e611c4_Sutherland-Cover.png?auto=compress,format "Children and mixed reality")
 
 
+Ivan Sutherland begins his article by describing technologies that we have nowadays, namely a computer and a graphics tablet. 
+Then he talks about the technology that he considers to be the Ultimate Display. A computer that can create a chair on which one can sit, 
+handcuffs that can really constrain, or a bullet that can really kill. It is interesting to think about where his Ultimate Display fits into 
+Milgram's Reality-Virtuality Continuum. Let's start with reality. The ultimate display cannot be reality in the sense that it is the computer that creates the object. 
+In this sense, we have a virtual object. It is not virtual reality either because the object created is placed in a real environment of which the user is aware. 
+It remains therefore augmented reality and augmented virtuality. I personally think that its Ultimate Display is an area between these two points. 
+Indeed, as he describes it, the virtual looks as real as the real itself. Therefore it is a perfect mix between virtual and real. We can say at the same time 
+that it is augmented reality (we make appear an extremely real virtual object in a real environment) or augmented virtuality (the objects are virtual but the user can
+interact with them and the sensations and the effects on him are real. He can really sit on the chair, he can really die from the virtual bullet,...). 
 
 
 # Lab Homework
@@ -75,9 +97,15 @@ I must have made a mistake somewhere but at the time of writing I have not yet s
 Update: Well I was a little bit stupid, I was trying to create the files using the "hugo server -D" command instead of the "hugo" command. Nevermind, now it works. I created a git with
 the docs folder and now you can admire this wonderful blog!
 
+Update 2: I'm coming back here just to talk about a little problem I had when adding images from my computer. 
+The theme said to write "/image.png" to add an image but it didn't work for me. The solution I found was to write the full path, e.g  
+http://localhost:1313/IGD301-blog/image.png. The problem is that this command works when I run my blog locally but not when I send it to github. 
+Finally, I solved this problem by replacing with http://lbertrand417.github.io/IGD301-blog/image.png. It requires that I push my site on Github to get the 
+images but once it's done they are available both locally and on Github.
+
 ## Setup Unity
 
-This part is easier because I already used Unity for old projects. Wait, did you say easier? Well, I didn't count on the fact that I don't have any more 
+This part is easier because I already used Unity for old projects so I already have an account. Wait, did you say easier? Well, I didn't count on the fact that I don't have any more 
 space on my computer and that the version we have to use is not the same as in the other courses! Good good good.... I leave you I must go to free up some space on my computer.
 
 [1 week later]

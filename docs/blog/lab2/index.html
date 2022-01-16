@@ -31,7 +31,7 @@
   <meta itemprop="name" content="Second lab">
 <meta itemprop="description" content="Roll-a-ball"><meta itemprop="datePublished" content="2021-12-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="909">
+<meta itemprop="wordCount" content="1684">
 <meta itemprop="keywords" content="Unity,VR,Tutorial,Roll-a-ball," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
@@ -127,7 +127,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      5&nbsp;minutes
+      8&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,7 +137,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      909&nbsp;words
+      1684&nbsp;words
       
     </h5>
 
@@ -208,6 +208,42 @@ and makes sure that this offset is constant throughout the game.</p>
 <p><img src="http://lbertrand417.github.io/IGD301-blog/camera_controller.png" alt="Camera Controller"></p>
 <p>The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.</p>
 <p><img src="https://raw.githubusercontent.com/ruthnaebeck/rollABall/master/readme/Demo.gif?raw=true" alt="Game result"></p>
+<h2 id="vr-version">VR version</h2>
+<p>Now that we have a working game in Unity, it&rsquo;s time to adapt it to VR. To do this, let&rsquo;s start by creating another 3D project.
+Then we need to import the different plug-ins needed for VR such as Oculus XR Plugin, add the necessary assets (Oculus integration found in the Asset Store)
+and change the project properties (remove Vulkan). Finally you have to change the platform from Build to Android. All these operations were done without any problem.
+The only thing that happened was that when I installed the Oculus integration Unity told me that some plugins had to be upgraded and I simply did OK and restarted Unity.
+As for the setup on the headset itself I didn&rsquo;t need to do anything contrary to what was written in the tutorial.
+I just had to plug the headset to my computer and everything was already working. Speaking of connecting the headset to the computer though,
+I couldn&rsquo;t use the cable that came with the headset because my computer doesn&rsquo;t have a USB-C port and I don&rsquo;t have an adapter either.
+So I used the cable from my phone charger which has a USB-C tip and a USB tip on the other side.</p>
+<p>Now that the project is set up, it is necessary to import the work already done in the previous steps.
+To do this we return to the first Unity project and export it as a .unitypackage. Then we import this file into our new project.
+When we do this some errors appear because we have a script called PlayerController but this name is already used in the Oculus Integration scripts.
+So I simply changed the name of my script to MyPlayerController. It is also necessary to remove the lines of code relative to InputSystem
+because here we will use the joysticks.</p>
+<p>We can now create a new scene in which we will add a floor (the floor on which the player will walk), as well as a table where our roll-a-ball game will be.
+To be able to move in the environment we need a special camera, provided by the Oculus integration asset. So we add in our scene OVRCameraRig and we change
+the tracking origin to &ldquo;Floor level&rdquo;. In the GameObjects that correspond to the hands, we add as a child the Prefab of the joysticks in order to make them appear
+in the scene. We can already test our result to have a preview of the environment. To test it is enough to connect the headset with the cable and to make
+build by selecting the desired scene.</p>
+<p>Now we can add our roll-a-ball game to the environment. To do this we create a new EmptyObject in which we put all the elements of the game
+(the board, the pick-us, the ball,&hellip;). We add to this object a Box collider so that it can interact with the external environment.
+However we don&rsquo;t want the objects inside to interact with this collider. To solve this problem we create two layers: &ldquo;selection&rdquo; which represents
+the whole game and &ldquo;roll-a-ball&rdquo; which represents all the elements of the game. Then we disable the interaction between the &ldquo;selection&rdquo; object and the
+&ldquo;roll-a-ball&rdquo; objects. Finally we add a RigidBody with gravity so that the board has a realistic behavior.
+Concerning the controllers, we add sphereCollider with trigger and rigidBody without gravity but with Kinematic.</p>
+<p>As for the version without VR, we also add a canvas to display the score (without forgetting to update the parameters of the script MyPlayerController).</p>
+<p>Finally we only have to add the interaction between the joysticks and the game board. For this we create a script attached to the
+controllers which will allow to grab the board. The idea is simple: when the controller is in the tray, if the trigger is pressed then we catch the object,
+otherwise we let it go. To catch the object you just have to put the joystick in the tray&rsquo;s parent position (so the tray will follow the joystick&rsquo;s movement),
+disable gravity and set the movement speeds to 0. To drop it, it is the opposite. We remove the parent, we put back the gravity and we add a speed depending
+on the speed of the joystick.</p>
+<p>When I tested the game I made some mistakes so the interaction did not work. First, instead of writing other.gameObject.name == &ldquo;Roll-a-ball&rdquo; I
+wrote other.gameObject.name == &ldquo;roll-a-ball&rdquo; so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball
+object so there was never a trigger.</p>
+<p>Here is the final result of the Roll-a-ball VR game</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/final_game.mp4" alt="Camera Controller"></p>
 
   </article><div class="bg-blue-100 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

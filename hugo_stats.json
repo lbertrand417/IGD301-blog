@@ -218,6 +218,7 @@
       "code-blocks",
       "create-a-unity-project",
       "create-the-scene",
+      "differentiate-real-from-virtual",
       "examples",
       "fn:1",
       "fnref:1",
@@ -242,16 +243,17 @@
       "paddle-locomotion",
       "paragraph",
       "roll-a-ball",
-      "safety-issues",
       "setup-blog",
       "setup-unity",
       "swimming-locomotion",
       "tables",
       "teleportation-ball",
       "twitter-simple-shortcode",
+      "ultimate-display",
       "unordered-list",
       "vagus-elidunt",
       "vimeo-simple-shortcode",
+      "vr-version",
       "youtube-privacy-enhanced-shortcode"
     ]
   }

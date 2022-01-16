@@ -116,3 +116,50 @@ The last step is to create the build and here we have our first working game! He
 
 ![Game result](https://raw.githubusercontent.com/ruthnaebeck/rollABall/master/readme/Demo.gif?raw=true)
 
+
+## VR version
+
+Now that we have a working game in Unity, it's time to adapt it to VR. To do this, let's start by creating another 3D project. 
+Then we need to import the different plug-ins needed for VR such as Oculus XR Plugin, add the necessary assets (Oculus integration found in the Asset Store) 
+and change the project properties (remove Vulkan). Finally you have to change the platform from Build to Android. All these operations were done without any problem. 
+The only thing that happened was that when I installed the Oculus integration Unity told me that some plugins had to be upgraded and I simply did OK and restarted Unity. 
+As for the setup on the headset itself I didn't need to do anything contrary to what was written in the tutorial. 
+I just had to plug the headset to my computer and everything was already working. Speaking of connecting the headset to the computer though, 
+I couldn't use the cable that came with the headset because my computer doesn't have a USB-C port and I don't have an adapter either. 
+So I used the cable from my phone charger which has a USB-C tip and a USB tip on the other side.
+
+Now that the project is set up, it is necessary to import the work already done in the previous steps. 
+To do this we return to the first Unity project and export it as a .unitypackage. Then we import this file into our new project. 
+When we do this some errors appear because we have a script called PlayerController but this name is already used in the Oculus Integration scripts. 
+So I simply changed the name of my script to MyPlayerController. It is also necessary to remove the lines of code relative to InputSystem 
+because here we will use the joysticks.
+
+We can now create a new scene in which we will add a floor (the floor on which the player will walk), as well as a table where our roll-a-ball game will be. 
+To be able to move in the environment we need a special camera, provided by the Oculus integration asset. So we add in our scene OVRCameraRig and we change 
+the tracking origin to "Floor level". In the GameObjects that correspond to the hands, we add as a child the Prefab of the joysticks in order to make them appear 
+in the scene. We can already test our result to have a preview of the environment. To test it is enough to connect the headset with the cable and to make 
+build by selecting the desired scene.
+
+Now we can add our roll-a-ball game to the environment. To do this we create a new EmptyObject in which we put all the elements of the game 
+(the board, the pick-us, the ball,...). We add to this object a Box collider so that it can interact with the external environment. 
+However we don't want the objects inside to interact with this collider. To solve this problem we create two layers: "selection" which represents 
+the whole game and "roll-a-ball" which represents all the elements of the game. Then we disable the interaction between the "selection" object and the 
+"roll-a-ball" objects. Finally we add a RigidBody with gravity so that the board has a realistic behavior.
+Concerning the controllers, we add sphereCollider with trigger and rigidBody without gravity but with Kinematic.
+
+As for the version without VR, we also add a canvas to display the score (without forgetting to update the parameters of the script MyPlayerController).
+
+Finally we only have to add the interaction between the joysticks and the game board. For this we create a script attached to the 
+controllers which will allow to grab the board. The idea is simple: when the controller is in the tray, if the trigger is pressed then we catch the object, 
+otherwise we let it go. To catch the object you just have to put the joystick in the tray's parent position (so the tray will follow the joystick's movement), 
+disable gravity and set the movement speeds to 0. To drop it, it is the opposite. We remove the parent, we put back the gravity and we add a speed depending 
+on the speed of the joystick.
+
+
+When I tested the game I made some mistakes so the interaction did not work. First, instead of writing other.gameObject.name == "Roll-a-ball" I 
+wrote other.gameObject.name == "roll-a-ball" so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball 
+object so there was never a trigger.
+
+Here is the final result of the Roll-a-ball VR game
+
+![Camera Controller](http://lbertrand417.github.io/IGD301-blog/final_game.mp4)
