@@ -31,7 +31,7 @@
   <meta itemprop="name" content="Second lab">
 <meta itemprop="description" content="Roll-a-ball"><meta itemprop="datePublished" content="2021-12-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1676">
+<meta itemprop="wordCount" content="2066">
 <meta itemprop="keywords" content="Unity,VR,Tutorial,Roll-a-ball," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
@@ -127,7 +127,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      8&nbsp;minutes
+      10&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,7 +137,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      1676&nbsp;words
+      2066&nbsp;words
       
     </h5>
 
@@ -193,20 +193,126 @@ Then we just have to study the object in contact with our ball. If it has the ta
 the display on the canvas.</p>
 <p>When the user has caught 30 or more objects, he/she has won and &ldquo;You win!&rdquo; is then displayed on the canvas.</p>
 <p>You can find the final code of the PlayerController script below</p>
-<p><img src="http://lbertrand417.github.io/IGD301-blog/player_controller3.png" alt="Player Controller"></p>
-<p><img src="http://lbertrand417.github.io/IGD301-blog/player_controller4.png" alt="Player Controller"></p>
-<p>Now we have to deal with the pick-ups. First of all, they are also RigidBody so we need to add the component.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+using TMPro;
+
+public class PlayerController : MonoBehaviour
+{
+
+    public float speed = 0;
+
+    private Rigidbody rb;
+    private float movementX;
+    private float movementY;
+    private int count;
+
+    public TextMeshProUGUI countText;
+    public GameObject winTextObject;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = this.GetComponent&lt;<span style="color:#ff79c6">Rigidbody</span>&gt;();
+        count = 0;
+        SetCountText();
+        winTextObject.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
+
+    void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get&lt;<span style="color:#ff79c6">Vector2</span>&gt;();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+        rb.AddForce(movement * speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag(&#34;pickups&#34;))
+        {
+            other.gameObject.SetActive(false);
+            count += 1;
+            SetCountText();
+        }
+    }
+
+    void SetCountText()
+    {
+        countText.text = &#34;Count: &#34; + count.ToString();
+        if (count &gt;= 30)
+        {
+            winTextObject.SetActive(true);
+        }
+    }
+}
+</code></pre></div><p>Now we have to deal with the pick-ups. First of all, they are also RigidBody so we need to add the component.
 However, unlike the ball, they are not subject to gravity so we need to uncheck the associated box.
 We must also check the isTrigger box of the collider so that the ball can interact with the pick-ups without colliding, as well as the isKinematic box of RigidBody.
 This last box allows the objects not to react to collisions and forces.</p>
 <p>We also want to make the pick-ups a little more dynamic. To do this, we create a new Rotator script that we attach to the Prefab (not to the objects themselves!).
 This script will only make a rotation at each update.</p>
-<p><img src="http://lbertrand417.github.io/IGD301-blog/rotator.png" alt="Rotator"></p>
-<p>Finally we want the camera to follow the movement of the ball.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Rotator : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+    }
+}
+</code></pre></div><p>Finally we want the camera to follow the movement of the ball.</p>
 <p>So we have to create a last script, attached to the camera. The function calculates the offset between the camera and the ball at the beginning of the game
 and makes sure that this offset is constant throughout the game.</p>
-<p><img src="http://lbertrand417.github.io/IGD301-blog/camera_controller.png" alt="Camera Controller"></p>
-<p>The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+
+    public GameObject player;
+
+    private Vector3 offset;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        offset = transform.position - player.transform.position;
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + offset;
+    }
+}
+</code></pre></div><p>The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.</p>
 <p><img src="https://raw.githubusercontent.com/ruthnaebeck/rollABall/master/readme/Demo.gif?raw=true" alt="Game result"></p>
 <h2 id="vr-version">VR version</h2>
 <p>Now that we have a working game in Unity, it&rsquo;s time to adapt it to VR. To do this, let&rsquo;s start by creating another 3D project.
@@ -247,7 +353,78 @@ on the speed of the controller.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">other.gameObject.name == &#34;roll-a-ball&#34; 
 </code></pre></div><p>so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball
 object so there was never a trigger.</p>
-<p>Here is the final result of the Roll-a-ball VR game:</p>
+<p>Our final code for MySelect.cs is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MySelect : MonoBehaviour
+{
+
+    public OVRInput.Controller controller;
+    private float triggerValue;
+    [SerializeField] private bool isInCollider;
+    [SerializeField] private bool isSelected;
+    private GameObject selectedObj;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        triggerValue = OVRInput.Get(
+			OVRInput.Axis1D.PrimaryIndexTrigger, 
+			controller);
+
+        if(isInCollider)
+        {
+            if(!isSelected &amp;&amp; triggerValue &gt; 0.95f)
+            {
+                isSelected = true;
+                selectedObj.transform.parent = this.transform;
+                Rigidbody rb = selectedObj.GetComponent&lt;<span style="color:#ff79c6">Rigidbody</span>&gt;();
+                rb.isKinematic = true;
+                rb.useGravity = false;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            else if (isSelected &amp;&amp; triggerValue &lt; <span style="color:#ff79c6">0.95f</span>)
+            {
+                <span style="color:#50fa7b">isSelected </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">false;</span>
+                <span style="color:#50fa7b">selectedObj</span>.<span style="color:#50fa7b">transform</span>.<span style="color:#50fa7b">parent </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">null;</span>
+                <span style="color:#50fa7b">Rigidbody</span> <span style="color:#50fa7b">rb </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">selectedObj.GetComponent&lt;Rigidbody</span>&gt;();
+                rb.useGravity = true;
+                rb.isKinematic = false;
+                rb.velocity = OVRInput.GetLocalControllerVelocity(controller);
+                rb.angularVelocity = OVRInput.GetLocalControllerAngularVelocity(controller);
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == &#34;Roll-a-ball&#34;)
+        {
+            isInCollider = true;
+            selectedObj = other.gameObject;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.name == &#34;Roll-a-ball&#34;)
+        {
+            isInCollider = false;
+            selectedObj = null;
+        }
+    }
+}
+</code></pre></div><p>Here is the final result of the Roll-a-ball VR game:</p>
 <p><img src="http://lbertrand417.github.io/IGD301-blog/final_game1.gif" alt="Final game"></p>
 <p><img src="http://lbertrand417.github.io/IGD301-blog/final_game2.gif" alt="Final game"></p>
 

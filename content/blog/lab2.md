@@ -90,9 +90,77 @@ When the user has caught 30 or more objects, he/she has won and "You win!" is th
 
 You can find the final code of the PlayerController script below
 
-![Player Controller](http://lbertrand417.github.io/IGD301-blog/player_controller3.png)
+```html
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
-![Player Controller](http://lbertrand417.github.io/IGD301-blog/player_controller4.png)
+using TMPro;
+
+public class PlayerController : MonoBehaviour
+{
+
+    public float speed = 0;
+
+    private Rigidbody rb;
+    private float movementX;
+    private float movementY;
+    private int count;
+
+    public TextMeshProUGUI countText;
+    public GameObject winTextObject;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = this.GetComponent<Rigidbody>();
+        count = 0;
+        SetCountText();
+        winTextObject.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
+
+    void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get<Vector2>();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+        rb.AddForce(movement * speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("pickups"))
+        {
+            other.gameObject.SetActive(false);
+            count += 1;
+            SetCountText();
+        }
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+        if (count >= 30)
+        {
+            winTextObject.SetActive(true);
+        }
+    }
+}
+```
 
 Now we have to deal with the pick-ups. First of all, they are also RigidBody so we need to add the component. 
 However, unlike the ball, they are not subject to gravity so we need to uncheck the associated box. 
@@ -102,14 +170,58 @@ This last box allows the objects not to react to collisions and forces.
 We also want to make the pick-ups a little more dynamic. To do this, we create a new Rotator script that we attach to the Prefab (not to the objects themselves!). 
 This script will only make a rotation at each update.
 
-![Rotator](http://lbertrand417.github.io/IGD301-blog/rotator.png)
+```html
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Rotator : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+    }
+}
+```
+
 
 Finally we want the camera to follow the movement of the ball.
 
 So we have to create a last script, attached to the camera. The function calculates the offset between the camera and the ball at the beginning of the game 
 and makes sure that this offset is constant throughout the game.
 
-![Camera Controller](http://lbertrand417.github.io/IGD301-blog/camera_controller.png)
+```html
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+
+    public GameObject player;
+
+    private Vector3 offset;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        offset = transform.position - player.transform.position;
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + offset;
+    }
+}
+```
 
 The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.
 
@@ -171,6 +283,83 @@ other.gameObject.name == "roll-a-ball"
 ```
 so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball 
 object so there was never a trigger.
+
+Our final code for MySelect.cs is:
+
+```html
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MySelect : MonoBehaviour
+{
+
+    public OVRInput.Controller controller;
+    private float triggerValue;
+    [SerializeField] private bool isInCollider;
+    [SerializeField] private bool isSelected;
+    private GameObject selectedObj;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        triggerValue = OVRInput.Get(
+			OVRInput.Axis1D.PrimaryIndexTrigger, 
+			controller);
+
+        if(isInCollider)
+        {
+            if(!isSelected && triggerValue > 0.95f)
+            {
+                isSelected = true;
+                selectedObj.transform.parent = this.transform;
+                Rigidbody rb = selectedObj.GetComponent<Rigidbody>();
+                rb.isKinematic = true;
+                rb.useGravity = false;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            else if (isSelected && triggerValue < 0.95f)
+            {
+                isSelected = false;
+                selectedObj.transform.parent = null;
+                Rigidbody rb = selectedObj.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.isKinematic = false;
+                rb.velocity = OVRInput.GetLocalControllerVelocity(controller);
+                rb.angularVelocity = OVRInput.GetLocalControllerAngularVelocity(controller);
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "Roll-a-ball")
+        {
+            isInCollider = true;
+            selectedObj = other.gameObject;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.name == "Roll-a-ball")
+        {
+            isInCollider = false;
+            selectedObj = null;
+        }
+    }
+}
+```
+
+
 
 Here is the final result of the Roll-a-ball VR game:
 
