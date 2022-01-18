@@ -45,7 +45,6 @@
       "rect",
       "script",
       "section",
-      "source",
       "span",
       "stop",
       "strong",
@@ -60,8 +59,7 @@
       "thead",
       "title",
       "tr",
-      "ul",
-      "video"
+      "ul"
     ],
     "classes": [
       "__h_video",
