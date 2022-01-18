@@ -134,3 +134,6 @@ I also want to study the ease of learning and ease of use, which are two criteri
 Finally, I want to study the precision since the goal is to have more or less precise balls according to their type. 
 For this, I could ask the user to try to aim at an area and evaluate the success rate according to the type of ball.
 
+Finally I chose to implement the last studied locomotion technique because it is the most adapted to the given Parkour. 
+If I had taken on of the 2 others I would have had to create myself an aquatic environment and being a beginner in VR it seemed to me a bit ambitious.
+
