@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.svg">
+
+  <title>
+    Project Part 4 - IGD301 - Blog
+  </title>
+  <meta name="description" content="Locomotion technique: Teleportation ball" /><meta name="generator" content="Hugo 0.91.1" /><link
+    rel="stylesheet"
+    href="https://lbertrand417.github.io/IGD301-blog/css/styles.min.0329d07cf5e07cd52141990c36f0feb8332eddb71a5c450ee2d65d94eedccf7d.css"
+    integrity="sha256-AynQfPXgfNUhQZkMNvD+uDMu3bcaXEUO4tZdlO7cz30="
+  />
+  
+  
+
+  <meta property="og:title" content="Project Part 4" />
+<meta property="og:description" content="Locomotion technique: Teleportation ball" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lbertrand417.github.io/IGD301-blog/blog/project_part4/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-04T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project Part 4"/>
+<meta name="twitter:description" content="Locomotion technique: Teleportation ball"/>
+
+  <meta itemprop="name" content="Project Part 4">
+<meta itemprop="description" content="Locomotion technique: Teleportation ball"><meta itemprop="datePublished" content="2022-02-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-04T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1878">
+<meta itemprop="keywords" content="Locomotion,VR,ball,teleportation," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
+  <a href="https://lbertrand417.github.io/IGD301-blog/" class="capitalize font-extrabold text-2xl">
+    IGD301 - Blog
+  </a>
+  <ul class="flex items-center gap-4 lg:gap-6">
+
+    
+    <li><a href="/IGD301-blog/blog">Blog</a></li>
+    
+    <li><a href="/IGD301-blog/page/about/">About</a></li>
+    
+    <li><a href="/IGD301-blog/tags">Tags</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="toggle-dark-mode inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="5" x2="12" y2="5.01" />
+          <line x1="17" y1="7" x2="17" y2="7.01" />
+          <line x1="19" y1="12" x2="19" y2="12.01" />
+          <line x1="17" y1="17" x2="17" y2="17.01" />
+          <line x1="12" y1="19" x2="12" y2="19.01" />
+          <line x1="7" y1="17" x2="7" y2="17.01" />
+          <line x1="5" y1="12" x2="5" y2="12.01" />
+          <line x1="7" y1="7" x2="7" y2="7.01" />
+        </svg>
+      </span>
+    </li>
+    
+  </ul>
+</header><main class="flex-1">
+  
+  
+
+  
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="https://l3apq3bncl82o596k2d1ydn1-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/KATloco_5.jpg" class="rounded-lg shadow-sm w-full object-contain" />
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      
+  
+    February 4, 2022
+  
+
+
+    </div>
+  </div>
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Project Part 4</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    February 4, 2022
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      9&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1878&nbsp;words
+      
+    </h5>
+
+    <p>Today I planned to correct the trigger problem (you can bring the ball back in your hand or change it even when the ball is thrown).
+For that, I added a boolean which is true when the ball is thrown and which blocks the AttachBall() and ChangeBall() functions.</p>
+<p>I also tried to allow the user to change the hand. My idea is that each controller has a MySelect.cs script and that in LocomotionTechnique
+we disable/enable one or the other depending on the user&rsquo;s actions. To change the hand, the principle is the same as to change the ball.
+If the player uses the left thumbstick then the ball will appear in the left hand and vice versa. I have also statically passed the balls array
+and the currentBall variable since the value is shared by both scripts. However, it didn&rsquo;t work. The ball changed hands the first time but then
+I couln&rsquo;t change the ball or change hands again. I thought it might be because I was using the thumbstick to change hands and balls at the same time so
+I tried to change hands by pressing the B button. But the result was the same. Even when I displayed the value of currentBall during the game,
+I couldn&rsquo;t detect when and why the code crashed (because it seems I couldn&rsquo;t do anything else because the code crashed). I found out that the code was crashing
+in the AttachBall() function but nothing more. It&rsquo;s possible that the error came from the array,
+I guess it must have been empty for some reason. Finally, I gave up, so my game has only a right hand version. I&rsquo;m a little disappointed because
+I thought this feature was interesting.</p>
+<p>Instead, I focused on a more important problem, the bouncing ball. I didn&rsquo;t really know how to deal with the kind of elasticity of the ball that allows
+it to bounce but after some research I discovered the existence of physics material. So I added a physic material to my bouncing ball to make it bounce.
+I also changed the assets of the sticky ball by making it slightly transparent and by giving it a bit of a slimey feel. I also set the ball speeds again so that
+the bouncing ball can go very far (but not too far either) and the sticky ball can go less far than the petanque ball. I realize that having a sticky ball that
+can&rsquo;t go as far as the petanque ball makes things a little less physically coherent (because it feels like the sticky ball is heavier than the petanque ball) but
+I didn&rsquo;t want the sticky ball to be &ldquo;too efficient&rdquo;. Indeed, it is more precise than the petanque ball so if it can go further, the petanque ball is useless.</p>
+<p>While testing throughout this session (and a bit in the previous sessions) I realized that waiting for the end of the throw was very long and made
+the locomotion quite boring. So I finally put back the system that allows to &ldquo;catch&rdquo; or change the ball in mid-air.
+I find that it makes the process more dynamic and avoids ending up outside the parkour in case of a bad throw. It also makes it easier to catch coins.</p>
+<p>Finally, I removed the FOV reduction which is not useful here because it is a teleportation, and I added a display which informs the player about the ball he has in hand.
+Indeed, it can be complicated to understand what the ball is doing just by looking at it and, moreover, one does not necessarily look at his hand when changing the ball.
+In the same way, a small tutorial appears at the beginning of the game to inform the user about the functioning of the locomotion technique.
+I consciously avoided telling the user that he could cancel a throw because I want this to be a property that he finds by himself while playing.</p>
+<p>Well, now we have a functional locomotion technique! We just have to fix the last bugs and it will be finished! One problem I noticed is that the bouncing ball
+sometimes stops in the air (because the stop condition is based on the speed and it is possible that it reaches this speed during one of the bounces).
+However, the y-position of the user depends on the y-position of the ball. In these moments, we find ourselves flying. To solve this problem I wanted to count
+the number of collisions between the ball and the ground and take for the y-component the value at the last collision. But in fact, contrary to what I thought,
+the Collider does not count the number of collisions between two same objects but only between an object and all the other objects it meets.
+So my solution was not suitable and I went back to the old version (which is satisfactory in most cases).</p>
+<p>Well, this concludes my project! Below you can find my complete code.</p>
+<p>MySelect.cs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> TMPro;
+<span style="color:#ff79c6">using</span> UnityEngine;
+
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">MySelect</span> <span style="color:#ff79c6">:</span> MonoBehaviour
+{
+    <span style="color:#ff79c6">public</span> GameObject[] balls <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> GameObject[<span style="color:#bd93f9">3</span>];
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> currentBall <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+
+    <span style="color:#ff79c6">public</span> LocomotionTechnique locomotion;
+
+    <span style="color:#ff79c6">public</span> OVRInput.Controller controller;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> triggerValue;
+
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">bool</span> isThrowing <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">bool</span> changeBall <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+
+    <span style="color:#ff79c6">private</span> Vector3 m_anchorOffsetPosition;
+    <span style="color:#ff79c6">private</span> Quaternion m_anchorOffsetRotation;
+
+    <span style="color:#ff79c6">private</span> Vector3 m_grabbedObjectPosOff;
+
+
+    <span style="color:#6272a4">// Start is called before the first frame update
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
+    {
+        <span style="color:#6272a4">// Retrieve balls
+</span><span style="color:#6272a4"></span>        balls[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> GameObject.Find(<span style="color:#f1fa8c">&#34;petanque&#34;</span>);
+        balls[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> GameObject.Find(<span style="color:#f1fa8c">&#34;sticky&#34;</span>);
+        balls[<span style="color:#bd93f9">1</span>].SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        balls[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">=</span> GameObject.Find(<span style="color:#f1fa8c">&#34;bouncy&#34;</span>);
+        balls[<span style="color:#bd93f9">2</span>].SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+
+        <span style="color:#6272a4">// Initialize current ball
+</span><span style="color:#6272a4"></span>        locomotion.currentBall <span style="color:#ff79c6">=</span> balls[<span style="color:#bd93f9">0</span>];
+        currentBall <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+    }
+    
+    <span style="color:#ff79c6">protected</span> <span style="color:#ff79c6">virtual</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Awake</span>()
+    {
+        m_anchorOffsetPosition <span style="color:#ff79c6">=</span> transform.localPosition;
+        m_anchorOffsetRotation <span style="color:#ff79c6">=</span> transform.localRotation;
+    }
+
+    <span style="color:#6272a4">// Update is called once per frame
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Update</span>()
+    {
+
+        <span style="color:#6272a4">// Remove start text
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd">bool</span> AButton <span style="color:#ff79c6">=</span> OVRInput.Get(OVRInput.Button.One);
+
+        <span style="color:#ff79c6">if</span> (AButton)
+        {
+            locomotion.parkourCounter.startTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        }
+
+        <span style="color:#6272a4">// Throw ball
+</span><span style="color:#6272a4"></span>        triggerValue <span style="color:#ff79c6">=</span> OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, controller);
+
+        <span style="color:#ff79c6">if</span> (triggerValue <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0.95f</span>)
+        {
+            <span style="color:#ff79c6">if</span> (balls[currentBall].transform.parent <span style="color:#ff79c6">==</span> null)
+            {
+                AttachBall();
+            }
+            isThrowing <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+        }
+
+        <span style="color:#ff79c6">if</span> (isThrowing <span style="color:#ff79c6">&amp;&amp;</span> triggerValue <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0.95f</span>) { 
+            <span style="color:#ff79c6">if</span> (OVRInput.GetLocalControllerVelocity(controller).magnitude <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1f</span>)
+            {
+                balls[currentBall].transform.parent <span style="color:#ff79c6">=</span> null;
+                Rigidbody rb <span style="color:#ff79c6">=</span> balls[currentBall].GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+                rb.useGravity <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+                rb.isKinematic <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+
+                OVRPose localPose <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> OVRPose { position <span style="color:#ff79c6">=</span> OVRInput.GetLocalControllerPosition(controller), orientation <span style="color:#ff79c6">=</span> OVRInput.GetLocalControllerRotation(controller) };
+                OVRPose offsetPose <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> OVRPose { position <span style="color:#ff79c6">=</span> m_anchorOffsetPosition, orientation <span style="color:#ff79c6">=</span> m_anchorOffsetRotation };
+                localPose <span style="color:#ff79c6">=</span> localPose <span style="color:#ff79c6">*</span> offsetPose;
+
+                OVRPose trackingSpace <span style="color:#ff79c6">=</span> transform.ToOVRPose() <span style="color:#ff79c6">*</span> localPose.Inverse();
+                Vector3 linearVelocity <span style="color:#ff79c6">=</span> trackingSpace.orientation <span style="color:#ff79c6">*</span> OVRInput.GetLocalControllerVelocity(controller);
+                Vector3 angularVelocity <span style="color:#ff79c6">=</span> trackingSpace.orientation <span style="color:#ff79c6">*</span> OVRInput.GetLocalControllerAngularVelocity(controller);
+                rb.velocity <span style="color:#ff79c6">=</span> balls[currentBall].GetComponent<span style="color:#ff79c6">&lt;</span>Ball<span style="color:#ff79c6">&gt;</span>().speedFactor <span style="color:#ff79c6">*</span> linearVelocity;
+                rb.angularVelocity <span style="color:#ff79c6">=</span> angularVelocity;
+            }
+
+            isThrowing <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+        }
+
+        <span style="color:#6272a4">// Change ball
+</span><span style="color:#6272a4"></span>        Vector2 primaryAxis <span style="color:#ff79c6">=</span> OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, controller);
+
+        <span style="color:#ff79c6">if</span> (primaryAxis.x <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0.95f</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">!</span>isThrowing <span style="color:#ff79c6">&amp;&amp;</span> changeBall)
+        {
+            StartCoroutine(ChangeBall(<span style="color:#bd93f9">1</span>));
+                        
+        }
+
+        <span style="color:#ff79c6">if</span> (primaryAxis.x <span style="color:#ff79c6">&lt;</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.95f</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">!</span>isThrowing <span style="color:#ff79c6">&amp;&amp;</span> changeBall)
+        {
+            StartCoroutine(ChangeBall(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>));
+        }
+    }
+
+    <span style="color:#ff79c6">private</span> IEnumerator <span style="color:#50fa7b">ChangeBall</span>(<span style="color:#8be9fd">int</span> increment)
+    {
+        changeBall <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+        balls[currentBall].SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        <span style="color:#ff79c6">if</span> (currentBall <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> increment <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>)
+        {
+            currentBall <span style="color:#ff79c6">=</span> balls.Length <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>;
+        } <span style="color:#ff79c6">else</span>
+        {
+            currentBall <span style="color:#ff79c6">=</span> (currentBall <span style="color:#ff79c6">+</span> increment) <span style="color:#ff79c6">%</span> balls.Length;
+        }
+        balls[currentBall].SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+        locomotion.currentBall <span style="color:#ff79c6">=</span> balls[currentBall];
+        AttachBall();
+
+        locomotion.parkourCounter.ballTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+        Ball myBall <span style="color:#ff79c6">=</span> balls[currentBall].GetComponent<span style="color:#ff79c6">&lt;</span>Ball<span style="color:#ff79c6">&gt;</span>();
+        <span style="color:#ff79c6">if</span> (myBall.type <span style="color:#ff79c6">==</span> Ball.Type.petanque)
+        {
+            locomotion.parkourCounter.ballTextGO.GetComponent<span style="color:#ff79c6">&lt;</span>TMP_Text<span style="color:#ff79c6">&gt;</span>().text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Petanque ball&#34;</span>;
+        }
+        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (myBall.type <span style="color:#ff79c6">==</span> Ball.Type.sticky)
+        {
+            locomotion.parkourCounter.ballTextGO.GetComponent<span style="color:#ff79c6">&lt;</span>TMP_Text<span style="color:#ff79c6">&gt;</span>().text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Sticky ball&#34;</span>;
+        }
+        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (myBall.type <span style="color:#ff79c6">==</span> Ball.Type.bouncy)
+        {
+            locomotion.parkourCounter.ballTextGO.GetComponent<span style="color:#ff79c6">&lt;</span>TMP_Text<span style="color:#ff79c6">&gt;</span>().text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Bouncy ball&#34;</span>;
+        }
+
+        yield <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> WaitForSeconds(<span style="color:#bd93f9">0.5f</span>);
+        locomotion.parkourCounter.ballTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        changeBall <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+    }
+
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">AttachBall</span>()
+    {
+        balls[currentBall].transform.parent <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.transform;
+
+        Vector3 relPos <span style="color:#ff79c6">=</span> balls[currentBall].transform.position <span style="color:#ff79c6">-</span> transform.position;
+        relPos <span style="color:#ff79c6">=</span> Quaternion.Inverse(transform.rotation) <span style="color:#ff79c6">*</span> relPos;
+        m_grabbedObjectPosOff <span style="color:#ff79c6">=</span> relPos;
+        Vector3 grabbablePosition <span style="color:#ff79c6">=</span> transform.position <span style="color:#ff79c6">+</span> transform.rotation <span style="color:#ff79c6">*</span> m_grabbedObjectPosOff;
+
+        balls[currentBall].transform.localPosition <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">0.0f</span>, <span style="color:#bd93f9">0.0f</span>, <span style="color:#bd93f9">0.0f</span>);
+        Rigidbody rb <span style="color:#ff79c6">=</span> balls[currentBall].GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+        rb.position <span style="color:#ff79c6">=</span> grabbablePosition;
+        rb.isKinematic <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+        rb.useGravity <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+        rb.velocity <span style="color:#ff79c6">=</span> Vector3.zero;
+        rb.angularVelocity <span style="color:#ff79c6">=</span> Vector3.zero;
+    }
+}
+
+</code></pre></div><p>Ball.cs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> UnityEngine;
+
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Ball</span> <span style="color:#ff79c6">:</span> MonoBehaviour
+{
+    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">enum</span> <span style="color:#50fa7b">Type</span>
+    {
+        petanque,
+        sticky,
+        bouncy
+    };
+
+    <span style="color:#ff79c6">public</span> Type type;
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">float</span> speedFactor <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">float</span> velocityThreshold <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5f</span>;
+
+    <span style="color:#ff79c6">public</span> ParkourCounter parkourCounter;
+
+    <span style="color:#6272a4">// Start is called before the first frame update
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
+    {
+        
+    }
+
+    <span style="color:#6272a4">// Update is called once per frame
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Update</span>()
+    {
+        Rigidbody rb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+        <span style="color:#ff79c6">if</span> (rb.velocity.magnitude <span style="color:#ff79c6">&lt;</span> velocityThreshold)
+        {
+            rb.velocity <span style="color:#ff79c6">=</span> Vector3.zero;
+        }
+    }
+
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnCollisionEnter</span>(Collision collision)
+    {
+        Rigidbody rb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+        <span style="color:#ff79c6">if</span> (type <span style="color:#ff79c6">==</span> Type.sticky <span style="color:#ff79c6">||</span> (type <span style="color:#ff79c6">==</span> Type.bouncy <span style="color:#ff79c6">&amp;&amp;</span> rb.velocity.magnitude <span style="color:#ff79c6">&lt;</span> velocityThreshold))
+        {
+            rb.velocity <span style="color:#ff79c6">=</span> Vector3.zero;
+        }
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnTriggerEnter</span>(Collider other)
+    {
+        <span style="color:#ff79c6">if</span> (other.CompareTag(<span style="color:#f1fa8c">&#34;banner&#34;</span>))
+        {
+            <span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>AudioSource<span style="color:#ff79c6">&gt;</span>().Play();
+            parkourCounter.locomotionTech.stage <span style="color:#ff79c6">=</span> other.gameObject.name;
+            parkourCounter.isStageChange <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+        } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (other.CompareTag(<span style="color:#f1fa8c">&#34;coin&#34;</span>))
+        {
+            parkourCounter.coinCount <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>;
+            <span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>AudioSource<span style="color:#ff79c6">&gt;</span>().Play();
+            other.gameObject.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        }
+        <span style="color:#6272a4">// These are for the game mechanism.
+</span><span style="color:#6272a4"></span>
+    }
+}
+
+</code></pre></div><p>LocomotionTechnique.cs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> UnityEngine;
+
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">LocomotionTechnique</span> <span style="color:#ff79c6">:</span> MonoBehaviour
+{
+    <span style="color:#6272a4">// Please implement your locomotion technique in this script. 
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">private</span> MySelect rightHand;
+
+    <span style="color:#ff79c6">public</span> GameObject currentBall;
+
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> constantHeight;
+
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">bool</span> changeHand <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+
+
+    <span style="color:#6272a4">/////////////////////////////////////////////////////////
+</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// These are for the game mechanism.
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">public</span> ParkourCounter parkourCounter;
+    <span style="color:#ff79c6">public</span> string stage;
+    
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
+    {
+        constantHeight <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.gameObject.transform.position.y;
+
+        rightHand <span style="color:#ff79c6">=</span> GameObject.Find(<span style="color:#f1fa8c">&#34;RightHandAnchor&#34;</span>).GetComponent<span style="color:#ff79c6">&lt;</span>MySelect<span style="color:#ff79c6">&gt;</span>();
+        <span style="color:#6272a4">//currentBall = rightHand.balls[rightHand.currentBall];
+</span><span style="color:#6272a4"></span>        rightHand.AttachBall();
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Update</span>()
+    {
+        <span style="color:#6272a4">////////////////////////////////////////////////////////////////////////////////////////////////////
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// Please implement your LOCOMOTION TECHNIQUE in this script :D.
+</span><span style="color:#6272a4"></span>        Rigidbody rb <span style="color:#ff79c6">=</span> currentBall.GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+        Ball ball <span style="color:#ff79c6">=</span> currentBall.GetComponent<span style="color:#ff79c6">&lt;</span>Ball<span style="color:#ff79c6">&gt;</span>();
+        <span style="color:#ff79c6">if</span> (currentBall.transform.parent <span style="color:#ff79c6">==</span> null <span style="color:#ff79c6">&amp;&amp;</span> rb.velocity <span style="color:#ff79c6">==</span> Vector3.zero)
+        {
+            <span style="color:#ff79c6">this</span>.transform.position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vector3(currentBall.transform.position.x, currentBall.transform.position.y <span style="color:#ff79c6">+</span> constantHeight, currentBall.transform.position.z);
+
+            rightHand.AttachBall();
+        }
+
+
+        <span style="color:#6272a4">////////////////////////////////////////////////////////////////////////////////
+</span><span style="color:#6272a4"></span>        <span style="color:#6272a4">// These are for the game mechanism.
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> (OVRInput.Get(OVRInput.Button.Two) <span style="color:#ff79c6">||</span> OVRInput.Get(OVRInput.Button.Four))
+        {
+            <span style="color:#ff79c6">if</span> (parkourCounter.parkourStart)
+            {
+                <span style="color:#ff79c6">this</span>.transform.position <span style="color:#ff79c6">=</span> parkourCounter.currentRespawnPos;
+            }
+        }
+    }
+
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnTriggerEnter</span>(Collider other)
+    {
+
+        <span style="color:#6272a4">// These are for the game mechanism.
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">if</span> (other.CompareTag(<span style="color:#f1fa8c">&#34;banner&#34;</span>))
+        {
+            stage <span style="color:#ff79c6">=</span> other.gameObject.name;
+            parkourCounter.isStageChange <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+        }
+        <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (other.CompareTag(<span style="color:#f1fa8c">&#34;coin&#34;</span>))
+        {
+            parkourCounter.coinCount <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>;
+            <span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>AudioSource<span style="color:#ff79c6">&gt;</span>().Play();
+            other.gameObject.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        }
+        <span style="color:#6272a4">// These are for the game mechanism.
+</span><span style="color:#6272a4"></span>
+    }
+}
+</code></pre></div><p>ParkourCounter.cs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> UnityEngine;
+<span style="color:#ff79c6">using</span> TMPro;
+
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">ParkourCounter</span> <span style="color:#ff79c6">:</span> MonoBehaviour
+{
+    <span style="color:#ff79c6">public</span> LocomotionTechnique locomotionTech;
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">bool</span> isStageChange;
+    <span style="color:#6272a4">// banners
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">public</span> GameObject startBanner;
+    <span style="color:#ff79c6">public</span> GameObject firstBanner;
+    <span style="color:#ff79c6">public</span> GameObject secondBanner;
+    <span style="color:#ff79c6">public</span> GameObject finalBanner;
+    <span style="color:#6272a4">// coins
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">public</span> GameObject firstCoins;
+    <span style="color:#ff79c6">public</span> GameObject secondCoins;
+    <span style="color:#ff79c6">public</span> GameObject finalCoins;
+    <span style="color:#6272a4">// respawn points
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">public</span> Transform start2FirstRespawn;
+    <span style="color:#ff79c6">public</span> Transform first2SecondRespawn;
+    <span style="color:#ff79c6">public</span> Transform second2FinalRespawn;
+    <span style="color:#ff79c6">public</span> Vector3 currentRespawnPos;
+
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">float</span> timeCounter;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> part1Time;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> part2Time;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> part3Time;
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">int</span> coinCount;
+    
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">int</span> part1Count; <span style="color:#6272a4">// 17
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">int</span> part2Count; <span style="color:#6272a4">// 33
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">int</span> part3Count; <span style="color:#6272a4">// 24
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">bool</span> parkourStart;
+
+    <span style="color:#ff79c6">public</span> TMP_Text timeText;
+    <span style="color:#ff79c6">public</span> TMP_Text coinText;
+    <span style="color:#ff79c6">public</span> TMP_Text recordText;
+    <span style="color:#ff79c6">public</span> GameObject startTextGO;
+    <span style="color:#ff79c6">public</span> GameObject ballTextGO;
+    <span style="color:#ff79c6">public</span> GameObject timeTextGO;
+    <span style="color:#ff79c6">public</span> GameObject coinTextGO;
+    <span style="color:#ff79c6">public</span> GameObject recordTextGO;
+    <span style="color:#ff79c6">public</span> GameObject endTextGO;
+    <span style="color:#ff79c6">public</span> AudioSource backgroundMusic;
+    <span style="color:#ff79c6">public</span> AudioSource endSoundEffect;
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
+    {
+        coinCount <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+        timeCounter <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.0f</span>;
+        firstBanner.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        secondBanner.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        finalBanner.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        firstCoins.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        secondCoins.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        finalCoins.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        parkourStart <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+        ballTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+        endTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Update</span>()
+    {
+        <span style="color:#ff79c6">if</span> (isStageChange)
+        {
+            isStageChange <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+            <span style="color:#ff79c6">if</span> (locomotionTech.stage <span style="color:#ff79c6">==</span> startBanner.name)
+            {
+                parkourStart <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+                startBanner.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                firstBanner.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+                firstCoins.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+                currentRespawnPos <span style="color:#ff79c6">=</span> start2FirstRespawn.position;
+            }
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (locomotionTech.stage <span style="color:#ff79c6">==</span> firstBanner.name)
+            {
+                firstBanner.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                firstCoins.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                secondBanner.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+                secondCoins.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+                part1Time <span style="color:#ff79c6">=</span> timeCounter;
+                part1Count <span style="color:#ff79c6">=</span> coinCount;
+                currentRespawnPos <span style="color:#ff79c6">=</span> first2SecondRespawn.position;
+                UpdateRecordText(<span style="color:#bd93f9">1</span>, part1Time, part1Count, <span style="color:#bd93f9">17</span>);
+            }
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (locomotionTech.stage <span style="color:#ff79c6">==</span> secondBanner.name)
+            {
+                secondBanner.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                secondCoins.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                finalBanner.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+                finalCoins.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+                part2Time <span style="color:#ff79c6">=</span> timeCounter <span style="color:#ff79c6">-</span> part1Time;
+                part2Count <span style="color:#ff79c6">=</span> coinCount <span style="color:#ff79c6">-</span> part1Count;
+                currentRespawnPos <span style="color:#ff79c6">=</span> second2FinalRespawn.position;
+                UpdateRecordText(<span style="color:#bd93f9">2</span>, part2Time, part2Count, <span style="color:#bd93f9">33</span>);
+            }
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (locomotionTech.stage <span style="color:#ff79c6">==</span> finalBanner.name)
+            {
+                parkourStart <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+                finalCoins.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                part3Time <span style="color:#ff79c6">=</span> timeCounter <span style="color:#ff79c6">-</span> (part1Time <span style="color:#ff79c6">+</span> part2Time);
+                part3Count <span style="color:#ff79c6">=</span> coinCount <span style="color:#ff79c6">-</span> (part1Count <span style="color:#ff79c6">+</span> part2Count);
+                UpdateRecordText(<span style="color:#bd93f9">3</span>, part3Time, part3Count, <span style="color:#bd93f9">24</span>);
+                timeTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                coinTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                recordTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+                endTextGO.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
+                endTextGO.GetComponent<span style="color:#ff79c6">&lt;</span>TMP_Text<span style="color:#ff79c6">&gt;</span>().text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Parkour Finished!</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">+</span> recordText.text <span style="color:#ff79c6">+</span>
+                    <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">total: &#34;</span> <span style="color:#ff79c6">+</span> timeCounter.ToString(<span style="color:#f1fa8c">&#34;F2&#34;</span>) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;, &#34;</span> <span style="color:#ff79c6">+</span> coinCount.ToString() <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/74&#34;</span>;
+                Debug.Log(endTextGO.GetComponent<span style="color:#ff79c6">&lt;</span>TMP_Text<span style="color:#ff79c6">&gt;</span>().text);
+                endSoundEffect.Play();
+            }
+        }
+
+        <span style="color:#ff79c6">if</span> (parkourStart)
+        {
+            timeCounter <span style="color:#ff79c6">+=</span> Time.deltaTime;
+            timeText.text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;time: &#34;</span> <span style="color:#ff79c6">+</span> timeCounter.ToString(<span style="color:#f1fa8c">&#34;F2&#34;</span>);
+            coinText.text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;coins: &#34;</span> <span style="color:#ff79c6">+</span> coinCount.ToString();
+        }       
+    }
+
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">UpdateRecordText</span>(<span style="color:#8be9fd">int</span> part, <span style="color:#8be9fd">float</span> time, <span style="color:#8be9fd">int</span> coinsCount, <span style="color:#8be9fd">int</span> coinsInPart)
+    {
+        string newRecords <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;part&#34;</span> <span style="color:#ff79c6">+</span> part.ToString() <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;: &#34;</span> <span style="color:#ff79c6">+</span> time.ToString(<span style="color:#f1fa8c">&#34;F2&#34;</span>) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;, &#34;</span> <span style="color:#ff79c6">+</span> coinsCount <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#ff79c6">+</span> coinsInPart;
+        recordText.text <span style="color:#ff79c6">=</span> recordText.text <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">+</span> newRecords;
+    }
+}
+
+</code></pre></div>
+  </article><div class="bg-blue-100 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60">I&#39;m an engineer student in computer graphics</p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      
+      <li>
+        <a
+          href="https://www.linkedin.com/in/lauriane-b-6b1064152/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/lbertrand417"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2021 - Lauriane Bertrand · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://lbertrand417.github.io/IGD301-blog/js/scripts.min.js"></script>
+
+
+
+
+
+
+<script>
+  
+  const darkmode = document.querySelector('.toggle-dark-mode');
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkmode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkmode', 'dark')
+    }
+  }
+  if (darkmode) {
+    darkmode.addEventListener('click', toggleDarkMode);
+  }
+
+  const isDark = localStorage.getItem('darkmode');
+  if (isDark && isDark === 'dark') {
+    toggleDarkMode();
+  }
+</script>
+</body>
+</html>

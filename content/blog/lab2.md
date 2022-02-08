@@ -90,7 +90,7 @@ When the user has caught 30 or more objects, he/she has won and "You win!" is th
 
 You can find the final code of the PlayerController script below
 
-```html
+```c++
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -170,7 +170,7 @@ This last box allows the objects not to react to collisions and forces.
 We also want to make the pick-ups a little more dynamic. To do this, we create a new Rotator script that we attach to the Prefab (not to the objects themselves!). 
 This script will only make a rotation at each update.
 
-```html
+```c++
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -197,7 +197,7 @@ Finally we want the camera to follow the movement of the ball.
 So we have to create a last script, attached to the camera. The function calculates the offset between the camera and the ball at the beginning of the game 
 and makes sure that this offset is constant throughout the game.
 
-```html
+```c++
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -274,11 +274,11 @@ on the speed of the controller.
 
 
 When I tested the game I made some mistakes so the interaction did not work. First, instead of writing 
-```html
+```c++
 other.gameObject.name == "Roll-a-ball"  
 ```
 I wrote 
-```html
+```c++
 other.gameObject.name == "roll-a-ball" 
 ```
 so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball 
@@ -286,7 +286,7 @@ object so there was never a trigger.
 
 Our final code for MySelect.cs is:
 
-```html
+```c++
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

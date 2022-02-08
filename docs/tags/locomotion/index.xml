@@ -6,7 +6,46 @@
     <description>Recent content in Locomotion on IGD301 - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lbertrand417.github.io/IGD301-blog/tags/locomotion/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://lbertrand417.github.io/IGD301-blog/tags/locomotion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project Part 1</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part1/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part1/</guid>
+      <description>It&amp;rsquo;s time to start the project. As described previously in lab 3, I have chosen to implement the teleportation ball as my locomotion technique. Even if I know that this locomotion technique is not the most adapted for the parkour provided by the teachers I still chose to make my tests by using it.
+The first step was to import the project. I didn&amp;rsquo;t encounter any problems, I simply followed the teacher&amp;rsquo;s tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Project Part 2</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part2/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part2/</guid>
+      <description>It&amp;rsquo;s time to get back to the project. As described in the previous post there are two major issues to address:
+ The ball sometimes crosses the ground when it has a collider It is difficult to start the game. In fact, the user does not collide with the collider of the banner because of teleportation.  Today I will focus on the balls and leave the problem of starting the game for another time.</description>
+    </item>
+    
+    <item>
+      <title>Project Part 3</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part3/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part3/</guid>
+      <description>Today my goal is to solve the problems with the coins and banners and to add the bouncing ball. As a reminder, currently the balls collide with the coins. This is a problem because the coins are not supposed to be solid, and also because when you use the sticky ball you teleport onto the coin. Since the locomotion is done with the ball, I decided that the ball represents the movement of the user.</description>
+    </item>
+    
+    <item>
+      <title>Project Part 4</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part4/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part4/</guid>
+      <description>Today I planned to correct the trigger problem (you can bring the ball back in your hand or change it even when the ball is thrown). For that, I added a boolean which is true when the ball is thrown and which blocks the AttachBall() and ChangeBall() functions.
+I also tried to allow the user to change the hand. My idea is that each controller has a MySelect.cs script and that in LocomotionTechnique we disable/enable one or the other depending on the user&amp;rsquo;s actions.</description>
+    </item>
+    
     <item>
       <title>Third lab</title>
       <link>https://lbertrand417.github.io/IGD301-blog/blog/lab3/</link>
@@ -15,19 +54,6 @@
       <guid>https://lbertrand417.github.io/IGD301-blog/blog/lab3/</guid>
       <description>Lecture Homework The goal of this homework is to propose different types of locomotion techniques to naviguate in the virtual environment.
 Swimming locomotion I want to design a locomotion technique that could be used in an aquatic environment. The purpose of my locomotion is to move freely in the water and enjoy the environment. It is therefore more suitable for underwater exploration games, without stress or constraints, even if we could imagine more complex scenarios (speed game where you have to escape from a shark, underwater escape game,&amp;hellip;).</description>
-    </item>
-    
-    <item>
-      <title>Third lab</title>
-      <link>https://lbertrand417.github.io/IGD301-blog/blog/lab4/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://lbertrand417.github.io/IGD301-blog/blog/lab4/</guid>
-      <description>TODO : write properly
-Install VR parkour &amp;ndash;&amp;gt; problem with cables (usde my phone cable)
-Create ball and possibility to grab and throw it using grabber and grabbable
-Put the ball in my hand and throw it (MySelect.css)
-Teleport to the final stage (LocomotionTechnique.css)</description>
     </item>
     
   </channel>

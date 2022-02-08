@@ -193,72 +193,72 @@ Then we just have to study the object in contact with our ball. If it has the ta
 the display on the canvas.</p>
 <p>When the user has caught 30 or more objects, he/she has won and &ldquo;You win!&rdquo; is then displayed on the canvas.</p>
 <p>You can find the final code of the PlayerController script below</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> UnityEngine;
+<span style="color:#ff79c6">using</span> UnityEngine.InputSystem;
 
-using TMPro;
+<span style="color:#ff79c6">using</span> TMPro;
 
-public class PlayerController : MonoBehaviour
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">PlayerController</span> <span style="color:#ff79c6">:</span> MonoBehaviour
 {
 
-    public float speed = 0;
+    <span style="color:#ff79c6">public</span> <span style="color:#8be9fd">float</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
 
-    private Rigidbody rb;
-    private float movementX;
-    private float movementY;
-    private int count;
+    <span style="color:#ff79c6">private</span> Rigidbody rb;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> movementX;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> movementY;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">int</span> count;
 
-    public TextMeshProUGUI countText;
-    public GameObject winTextObject;
+    <span style="color:#ff79c6">public</span> TextMeshProUGUI countText;
+    <span style="color:#ff79c6">public</span> GameObject winTextObject;
 
-    // Start is called before the first frame update
-    void Start()
+    <span style="color:#6272a4">// Start is called before the first frame update
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
     {
-        rb = this.GetComponent&lt;<span style="color:#ff79c6">Rigidbody</span>&gt;();
-        count = 0;
+        rb <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+        count <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
         SetCountText();
-        winTextObject.SetActive(false);
+        winTextObject.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
     }
 
-    // Update is called once per frame
-    void Update()
+    <span style="color:#6272a4">// Update is called once per frame
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Update</span>()
     {
        
     }
 
-    void OnMove(InputValue movementValue)
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnMove</span>(InputValue movementValue)
     {
-        Vector2 movementVector = movementValue.Get&lt;<span style="color:#ff79c6">Vector2</span>&gt;();
+        Vector2 movementVector <span style="color:#ff79c6">=</span> movementValue.Get<span style="color:#ff79c6">&lt;</span>Vector2<span style="color:#ff79c6">&gt;</span>();
 
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+        movementX <span style="color:#ff79c6">=</span> movementVector.x;
+        movementY <span style="color:#ff79c6">=</span> movementVector.y;
     }
 
-    private void FixedUpdate()
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">FixedUpdate</span>()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        Vector3 movement <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vector3(movementX, <span style="color:#bd93f9">0.0f</span>, movementY);
 
-        rb.AddForce(movement * speed);
+        rb.AddForce(movement <span style="color:#ff79c6">*</span> speed);
     }
 
-    private void OnTriggerEnter(Collider other)
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnTriggerEnter</span>(Collider other)
     {
-        if (other.gameObject.CompareTag(&#34;pickups&#34;))
+        <span style="color:#ff79c6">if</span> (other.gameObject.CompareTag(<span style="color:#f1fa8c">&#34;pickups&#34;</span>))
         {
-            other.gameObject.SetActive(false);
-            count += 1;
+            other.gameObject.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
+            count <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>;
             SetCountText();
         }
     }
 
-    void SetCountText()
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">SetCountText</span>()
     {
-        countText.text = &#34;Count: &#34; + count.ToString();
-        if (count &gt;= 30)
+        countText.text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Count: &#34;</span> <span style="color:#ff79c6">+</span> count.ToString();
+        <span style="color:#ff79c6">if</span> (count <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">30</span>)
         {
-            winTextObject.SetActive(true);
+            winTextObject.SetActive(<span style="color:#8be9fd;font-style:italic">true</span>);
         }
     }
 }
@@ -268,48 +268,48 @@ We must also check the isTrigger box of the collider so that the ball can intera
 This last box allows the objects not to react to collisions and forces.</p>
 <p>We also want to make the pick-ups a little more dynamic. To do this, we create a new Rotator script that we attach to the Prefab (not to the objects themselves!).
 This script will only make a rotation at each update.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> UnityEngine;
 
-public class Rotator : MonoBehaviour
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Rotator</span> <span style="color:#ff79c6">:</span> MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    <span style="color:#6272a4">// Start is called before the first frame update
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    <span style="color:#6272a4">// Update is called once per frame
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Update</span>()
     {
-        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+        transform.Rotate(<span style="color:#ff79c6">new</span> Vector3(<span style="color:#bd93f9">15</span>, <span style="color:#bd93f9">30</span>, <span style="color:#bd93f9">45</span>) <span style="color:#ff79c6">*</span> Time.deltaTime);
     }
 }
 </code></pre></div><p>Finally we want the camera to follow the movement of the ball.</p>
 <p>So we have to create a last script, attached to the camera. The function calculates the offset between the camera and the ball at the beginning of the game
 and makes sure that this offset is constant throughout the game.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> UnityEngine;
 
-public class CameraController : MonoBehaviour
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">CameraController</span> <span style="color:#ff79c6">:</span> MonoBehaviour
 {
 
-    public GameObject player;
+    <span style="color:#ff79c6">public</span> GameObject player;
 
-    private Vector3 offset;
+    <span style="color:#ff79c6">private</span> Vector3 offset;
 
-    // Start is called before the first frame update
-    void Start()
+    <span style="color:#6272a4">// Start is called before the first frame update
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
     {
-        offset = transform.position - player.transform.position;
+        offset <span style="color:#ff79c6">=</span> transform.position <span style="color:#ff79c6">-</span> player.transform.position;
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    <span style="color:#6272a4">// Update is called once per frame
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">LateUpdate</span>()
     {
-        transform.position = player.transform.position + offset;
+        transform.position <span style="color:#ff79c6">=</span> player.transform.position <span style="color:#ff79c6">+</span> offset;
     }
 }
 </code></pre></div><p>The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.</p>
@@ -348,79 +348,79 @@ otherwise we let it go. To catch the object you just have to put the controller 
 disable gravity and set the movement speeds to 0. To drop it, it is the opposite. We remove the parent, we put back the gravity and we add a speed depending
 on the speed of the controller.</p>
 <p>When I tested the game I made some mistakes so the interaction did not work. First, instead of writing</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">other.gameObject.name == &#34;Roll-a-ball&#34;  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">other.gameObject.name <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Roll-a-ball&#34;</span>  
 </code></pre></div><p>I wrote</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">other.gameObject.name == &#34;roll-a-ball&#34; 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">other.gameObject.name <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;roll-a-ball&#34;</span> 
 </code></pre></div><p>so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball
 object so there was never a trigger.</p>
 <p>Our final code for MySelect.cs is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
+<span style="color:#ff79c6">using</span> System.Collections.Generic;
+<span style="color:#ff79c6">using</span> UnityEngine;
 
-public class MySelect : MonoBehaviour
+<span style="color:#ff79c6">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">MySelect</span> <span style="color:#ff79c6">:</span> MonoBehaviour
 {
 
-    public OVRInput.Controller controller;
-    private float triggerValue;
-    [SerializeField] private bool isInCollider;
-    [SerializeField] private bool isSelected;
-    private GameObject selectedObj;
+    <span style="color:#ff79c6">public</span> OVRInput.Controller controller;
+    <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">float</span> triggerValue;
+    [SerializeField] <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">bool</span> isInCollider;
+    [SerializeField] <span style="color:#ff79c6">private</span> <span style="color:#8be9fd">bool</span> isSelected;
+    <span style="color:#ff79c6">private</span> GameObject selectedObj;
 
-    // Start is called before the first frame update
-    void Start()
+    <span style="color:#6272a4">// Start is called before the first frame update
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Start</span>()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    <span style="color:#6272a4">// Update is called once per frame
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">Update</span>()
     {
-        triggerValue = OVRInput.Get(
+        triggerValue <span style="color:#ff79c6">=</span> OVRInput.Get(
 			OVRInput.Axis1D.PrimaryIndexTrigger, 
 			controller);
 
-        if(isInCollider)
+        <span style="color:#ff79c6">if</span>(isInCollider)
         {
-            if(!isSelected &amp;&amp; triggerValue &gt; 0.95f)
+            <span style="color:#ff79c6">if</span>(<span style="color:#ff79c6">!</span>isSelected <span style="color:#ff79c6">&amp;&amp;</span> triggerValue <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0.95f</span>)
             {
-                isSelected = true;
-                selectedObj.transform.parent = this.transform;
-                Rigidbody rb = selectedObj.GetComponent&lt;<span style="color:#ff79c6">Rigidbody</span>&gt;();
-                rb.isKinematic = true;
-                rb.useGravity = false;
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
+                isSelected <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+                selectedObj.transform.parent <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">this</span>.transform;
+                Rigidbody rb <span style="color:#ff79c6">=</span> selectedObj.GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+                rb.isKinematic <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+                rb.useGravity <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+                rb.velocity <span style="color:#ff79c6">=</span> Vector3.zero;
+                rb.angularVelocity <span style="color:#ff79c6">=</span> Vector3.zero;
             }
 
-            else if (isSelected &amp;&amp; triggerValue &lt; <span style="color:#ff79c6">0.95f</span>)
+            <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (isSelected <span style="color:#ff79c6">&amp;&amp;</span> triggerValue <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0.95f</span>)
             {
-                <span style="color:#50fa7b">isSelected </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">false;</span>
-                <span style="color:#50fa7b">selectedObj</span>.<span style="color:#50fa7b">transform</span>.<span style="color:#50fa7b">parent </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">null;</span>
-                <span style="color:#50fa7b">Rigidbody</span> <span style="color:#50fa7b">rb </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">selectedObj.GetComponent&lt;Rigidbody</span>&gt;();
-                rb.useGravity = true;
-                rb.isKinematic = false;
-                rb.velocity = OVRInput.GetLocalControllerVelocity(controller);
-                rb.angularVelocity = OVRInput.GetLocalControllerAngularVelocity(controller);
+                isSelected <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+                selectedObj.transform.parent <span style="color:#ff79c6">=</span> null;
+                Rigidbody rb <span style="color:#ff79c6">=</span> selectedObj.GetComponent<span style="color:#ff79c6">&lt;</span>Rigidbody<span style="color:#ff79c6">&gt;</span>();
+                rb.useGravity <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+                rb.isKinematic <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+                rb.velocity <span style="color:#ff79c6">=</span> OVRInput.GetLocalControllerVelocity(controller);
+                rb.angularVelocity <span style="color:#ff79c6">=</span> OVRInput.GetLocalControllerAngularVelocity(controller);
             }
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnTriggerEnter</span>(Collider other)
     {
-        if(other.gameObject.name == &#34;Roll-a-ball&#34;)
+        <span style="color:#ff79c6">if</span>(other.gameObject.name <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Roll-a-ball&#34;</span>)
         {
-            isInCollider = true;
-            selectedObj = other.gameObject;
+            isInCollider <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
+            selectedObj <span style="color:#ff79c6">=</span> other.gameObject;
         }
     }
 
-    void OnTriggerExit(Collider other)
+    <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnTriggerExit</span>(Collider other)
     {
-        if(other.gameObject.name == &#34;Roll-a-ball&#34;)
+        <span style="color:#ff79c6">if</span>(other.gameObject.name <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;Roll-a-ball&#34;</span>)
         {
-            isInCollider = false;
-            selectedObj = null;
+            isInCollider <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">false</span>;
+            selectedObj <span style="color:#ff79c6">=</span> null;
         }
     }
 }

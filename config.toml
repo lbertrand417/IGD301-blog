@@ -10,6 +10,8 @@ staticDir = ['static']
 # Enable emoji
 enableEmoji = true
 
+#ignoreErrors = ["error-remote-getjson"]
+
 [params]
   introTitle = "Hey! I'm Lauriane Bertrand"
   introSubtitle = "This blog will present my work during the IGD301 course of Telecom Paris. Hope you enjoy!"
