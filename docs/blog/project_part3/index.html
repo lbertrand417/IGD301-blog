@@ -161,11 +161,13 @@ of the coins and banner, and I added it to my script Ball.cs.</p>
 	}
 	<span style="color:#6272a4">// These are for the game mechanism.
 </span><span style="color:#6272a4"></span>}
-</code></pre></div><p>Then, I used the same process as what we had done in the TP Roll-a-ball so that there is no collision but a trigger.
+</code></pre></div><p><img src="http://lbertrand417.github.io/IGD301-blog/coin_issue_solved.gif" alt="Coin issue solved"></p>
+<p>Then, I used the same process as what we had done in the TP Roll-a-ball so that there is no collision but a trigger.
 To do this, I added a rigibody to the coins, deactivated the gravity, and activated the kinematics. I also checked isTrigger in their collider in order to
 activate the OnTriggerEnter() function of the ball. After some trial and error due to carelessness I finally got a working result.
 Finally I used the same concept for the banner. I removed the Uncollide and Ball layers that I had initially created and I added a RigidBody to the objects
 containing the banners by putting the same parameters as for the coins. Now, we can start the steps by throwing the ball as well as retrieving coins.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/demo_start.gif" alt="Demo start"></p>
 <p>I didn&rsquo;t do much more today. Next time I will correct other issues that I detected : when you throw the ball and use the trigger again during the throwing,
 the ball comes back to your hand. Also, if you just click on the trigger (without doing the throwing move) the ball is still thrown (well, it&rsquo;s more falling than
 being thrown but you get the idea). Same when you try to change the ball when it&rsquo;s already been thrown. I will also add the mechanics for the bounciness of the bouncy ball

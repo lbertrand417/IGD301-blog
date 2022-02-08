@@ -172,9 +172,11 @@ I wrote</li>
 So instead of calling balls[currentBall] I replaced it with balls[Mathf.Abs(currentBall)].</p>
 <ul>
 <li>The change was happening way too fast. Indeed, my code was in the Update() function and so the ball was changing 3 to 4 times in the interval when the thumbstick
-was moved. To solve this problem I used a coroutine, in order to wait a certain time before continuing the Update(). This gives the user time to let go of the
-thumbstick before the function restarts.</li>
+was moved.</li>
 </ul>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/change_ball_issue.gif" alt="Change ball issue"></p>
+<p>To solve this problem I used a coroutine, in order to wait a certain time before continuing the Update(). This gives the user time to let go of the
+thumbstick before the function restarts.</p>
 <p>So the code to change the ball looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">if</span> (primaryAxis.x <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0.95f</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">!</span>isThrowing <span style="color:#ff79c6">&amp;&amp;</span> changeBall)
 {
@@ -198,11 +200,13 @@ thumbstick before the function restarts.</li>
 	yield <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">new</span> WaitForSeconds(<span style="color:#bd93f9">0.5f</span>);
 	changeBall <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
 }
-</code></pre></div><p>Note that I also changed the asset of the petanque ball to make it more realistic. For this I took a file of a petanque ball for 3D impression that I converted
+</code></pre></div><p><img src="http://lbertrand417.github.io/IGD301-blog/change_ball_issue_corrected.gif" alt="Change ball issue corrected"></p>
+<p>Note that I also changed the asset of the petanque ball to make it more realistic. For this I took a file of a petanque ball for 3D impression that I converted
 into a .obj file. Then I imported it in Unity and added a metallic material to make it looks like a real petanque ball.
 However the anchor point of the object was different from the other balls so It wasn&rsquo;t attached properlyto the controller. My solution was to create an EmptyObject which
 will contain my petanque prefab. Then, I moved the ball inside such that the anchor point of the empty object was in the middle of the ball.
 This way the anchor point was back to its normal position.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/demo_petanque_ball.gif" alt="Demo petanque ball"></p>
 <p>Now that I have different balls, I also have to deal with the properties of the different balls. For this, I created a new Ball.cs script attached to each ball,
 which stores their properties. A ball has a type (sticky, petanque, bouncy), a speedFactor and a velocityThreshold. The speed factor is used to determine
 the speed of the ball when it is thrown. Indeed, I noticed that when throwing a ball with only the speed of the controller, the ball didn&rsquo;t go far enough
@@ -222,7 +226,8 @@ For that, in the Ball.cs script I added an OnCollideEnter() which checks that th
 		rb.velocity <span style="color:#ff79c6">=</span> Vector3.zero;
 	}
 }
-</code></pre></div><p>Finally, I noticed that there were still problems with my teleportation formula when we were on a hill. As I said last time, I put</p>
+</code></pre></div><p><img src="http://lbertrand417.github.io/IGD301-blog/sticky_ball_1st_draft.gif" alt="First draft sticky ball"></p>
+<p>Finally, I noticed that there were still problems with my teleportation formula when we were on a hill. As I said last time, I put</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">this</span>.transform.position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vector3(currentBall.transform.position.x, currentBall.transform.position.y <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">this</span>.transform.position.y, currentBall.transform.position.z);
 </code></pre></div><p>But in reality the this.transform.position.y part, which is supposed to represent the user&rsquo;s height, increases as you go up, which is not right.
 To fix this problem I created a constantHeight variable that takes the value of this.transform.position.y when the game starts and I use this one instead.
@@ -230,6 +235,8 @@ So I end up with</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">this</span>.transform.position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> Vector3(currentBall.transform.position.x, currentBall.transform.position.y <span style="color:#ff79c6">+</span> constantHeight, currentBall.transform.position.z);
 </code></pre></div><p>These are all the changes made during this session. There is still the banner problem to solve and another problem I found during my tests today:
 the ball sticks to the coins, and when it sticks the user teleports onto the coin.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/collide_coins.gif" alt="Coin issue"></p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/sticky_coin_issue.gif" alt="Coin issue"></p>
 
   </article><div class="bg-blue-100 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

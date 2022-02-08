@@ -42,7 +42,11 @@ but I was actually getting negative indices.
 So instead of calling balls[currentBall] I replaced it with balls[Mathf.Abs(currentBall)].
 
 - The change was happening way too fast. Indeed, my code was in the Update() function and so the ball was changing 3 to 4 times in the interval when the thumbstick 
-was moved. To solve this problem I used a coroutine, in order to wait a certain time before continuing the Update(). This gives the user time to let go of the 
+was moved. 
+
+![Change ball issue](http://lbertrand417.github.io/IGD301-blog/change_ball_issue.gif)
+
+To solve this problem I used a coroutine, in order to wait a certain time before continuing the Update(). This gives the user time to let go of the 
 thumbstick before the function restarts.
 
 So the code to change the ball looks like this:
@@ -72,6 +76,7 @@ private IEnumerator ChangeBall(int increment)
 }
 ```
 
+![Change ball issue corrected](http://lbertrand417.github.io/IGD301-blog/change_ball_issue_corrected.gif)
 
 Note that I also changed the asset of the petanque ball to make it more realistic. For this I took a file of a petanque ball for 3D impression that I converted 
 into a .obj file. Then I imported it in Unity and added a metallic material to make it looks like a real petanque ball. 
@@ -79,6 +84,7 @@ However the anchor point of the object was different from the other balls so It 
 will contain my petanque prefab. Then, I moved the ball inside such that the anchor point of the empty object was in the middle of the ball.
 This way the anchor point was back to its normal position.
 
+![Demo petanque ball](http://lbertrand417.github.io/IGD301-blog/demo_petanque_ball.gif)
 
 Now that I have different balls, I also have to deal with the properties of the different balls. For this, I created a new Ball.cs script attached to each ball, 
 which stores their properties. A ball has a type (sticky, petanque, bouncy), a speedFactor and a velocityThreshold. The speed factor is used to determine 
@@ -114,6 +120,7 @@ private void OnCollisionEnter(Collision collision)
 }
 ```
 
+![First draft sticky ball](http://lbertrand417.github.io/IGD301-blog/sticky_ball_1st_draft.gif)
 
 Finally, I noticed that there were still problems with my teleportation formula when we were on a hill. As I said last time, I put 
 
@@ -131,3 +138,7 @@ this.transform.position = new Vector3(currentBall.transform.position.x, currentB
 
 These are all the changes made during this session. There is still the banner problem to solve and another problem I found during my tests today: 
 the ball sticks to the coins, and when it sticks the user teleports onto the coin.
+
+![Coin issue](http://lbertrand417.github.io/IGD301-blog/collide_coins.gif)
+
+![Coin issue](http://lbertrand417.github.io/IGD301-blog/sticky_coin_issue.gif)

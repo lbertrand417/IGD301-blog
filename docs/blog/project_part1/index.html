@@ -213,9 +213,13 @@ to stop at the point of contact directly.</p>
 <p>Well, now we have a good base since we can throw a ball and teleport. However, while testing I noticed that the ball collides with the box Collider which surrounds
 the start panel (and consequently the stages and end panels). To prevent this from happening, I created an Uncollide layer that I associated to the GameObject that contains the banner
 as well as a Ball layer associated to my ball, and I disabled the interactions between these 2 layers. Now the ball can go through.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/throw_ball_1st_draft.gif" alt="Ball first draft"></p>
 <p>This concludes my first session on the project. In the next session I plan to solve other problems I&rsquo;ve noticed: sometimes the ball goes through the ground
-(whereas the ground has a collider). Furthermore, it&rsquo;s very hard to start the course because the user has to collide with the banner, and my locomotion technique is a teleportation so
+(whereas the ground has a collider).</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/mesh_collider_issue.gif" alt="Mesh collider issue"></p>
+<p>Furthermore, it&rsquo;s very hard to start the course because the user has to collide with the banner, and my locomotion technique is a teleportation so
 you don&rsquo;t necessiraly go through the collider.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/start_issue.gif" alt="Start issue"></p>
 
   </article><div class="bg-blue-100 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

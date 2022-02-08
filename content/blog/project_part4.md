@@ -4,7 +4,7 @@ date: 2022-02-04
 draft: false
 description: "Locomotion technique: Teleportation ball"
 tags: ["Locomotion", "VR", "ball", "teleportation"]
-thumbnail: https://l3apq3bncl82o596k2d1ydn1-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/KATloco_5.jpg
+thumbnail: http://lbertrand417.github.io/IGD301-blog/thumbnail_project1.png
 ---
 
 Today I planned to correct the trigger problem (you can bring the ball back in your hand or change it even when the ball is thrown). 
@@ -23,21 +23,51 @@ I thought this feature was interesting.
 
 Instead, I focused on a more important problem, the bouncing ball. I didn't really know how to deal with the kind of elasticity of the ball that allows 
 it to bounce but after some research I discovered the existence of physics material. So I added a physic material to my bouncing ball to make it bounce. 
+
+![Demo bouncy ball](http://lbertrand417.github.io/IGD301-blog/demo_bouncy_ball.gif)
+
+
 I also changed the assets of the sticky ball by making it slightly transparent and by giving it a bit of a slimey feel. I also set the ball speeds again so that 
 the bouncing ball can go very far (but not too far either) and the sticky ball can go less far than the petanque ball. I realize that having a sticky ball that 
 can't go as far as the petanque ball makes things a little less physically coherent (because it feels like the sticky ball is heavier than the petanque ball) but 
 I didn't want the sticky ball to be "too efficient". Indeed, it is more precise than the petanque ball so if it can go further, the petanque ball is useless.
 
+![Demo sticky ball](http://lbertrand417.github.io/IGD301-blog/demo_sticky_ball.gif)
+
 While testing throughout this session (and a bit in the previous sessions) I realized that waiting for the end of the throw was very long and made 
 the locomotion quite boring. So I finally put back the system that allows to "catch" or change the ball in mid-air. 
 I find that it makes the process more dynamic and avoids ending up outside the parkour in case of a bad throw. It also makes it easier to catch coins.
 
+![Demo coin trick](http://lbertrand417.github.io/IGD301-blog/demo_coin_trick.gif)
+
 Finally, I removed the FOV reduction which is not useful here because it is a teleportation, and I added a display which informs the player about the ball he has in hand. 
 Indeed, it can be complicated to understand what the ball is doing just by looking at it and, moreover, one does not necessarily look at his hand when changing the ball. 
+
+![Switch ball](http://lbertrand417.github.io/IGD301-blog/switch_ball.gif)
+
 In the same way, a small tutorial appears at the beginning of the game to inform the user about the functioning of the locomotion technique. 
 I consciously avoided telling the user that he could cancel a throw because I want this to be a property that he finds by himself while playing. 
 
-Well, now we have a functional locomotion technique! We just have to fix the last bugs and it will be finished! One problem I noticed is that the bouncing ball 
+![Didacticiel](http://lbertrand417.github.io/IGD301-blog/intro_display.png)
+
+Well, now we have a functional locomotion technique! We just have to fix the last bugs and it will be finished!
+
+One bug I noticed concerns the ball change (again). I had said before that I was using Mathf.Abs to avoid having negative hints. 
+But in fact I realized that the order of the balls was not right when scrolling to the left. The coefficients were -2, -1, 0, 1, 2 instead of -1, -2, 0, 1, 2. 
+That's why I removed the Mathf.Abs and instead used a condition to know which way to go. 
+
+```c++
+if (currentBall == 0 && increment == -1)
+{
+	currentBall = balls.Length - 1;
+} else
+{
+	currentBall = (currentBall + increment) % balls.Length;
+}
+```
+
+
+Another bug I noticed is that the bouncing ball 
 sometimes stops in the air (because the stop condition is based on the speed and it is possible that it reaches this speed during one of the bounces). 
 However, the y-position of the user depends on the y-position of the ball. In these moments, we find ourselves flying. To solve this problem I wanted to count 
 the number of collisions between the ball and the ground and take for the y-component the value at the last collision. But in fact, contrary to what I thought, 

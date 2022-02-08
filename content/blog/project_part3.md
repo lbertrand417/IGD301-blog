@@ -31,11 +31,16 @@ void OnTriggerEnter(Collider other)
 }
 ```
 
+![Coin issue solved](http://lbertrand417.github.io/IGD301-blog/coin_issue_solved.gif)
+
+
 Then, I used the same process as what we had done in the TP Roll-a-ball so that there is no collision but a trigger. 
 To do this, I added a rigibody to the coins, deactivated the gravity, and activated the kinematics. I also checked isTrigger in their collider in order to 
 activate the OnTriggerEnter() function of the ball. After some trial and error due to carelessness I finally got a working result. 
 Finally I used the same concept for the banner. I removed the Uncollide and Ball layers that I had initially created and I added a RigidBody to the objects 
 containing the banners by putting the same parameters as for the coins. Now, we can start the steps by throwing the ball as well as retrieving coins.
+
+![Demo start](http://lbertrand417.github.io/IGD301-blog/demo_start.gif)
 
 I didn't do much more today. Next time I will correct other issues that I detected : when you throw the ball and use the trigger again during the throwing, 
 the ball comes back to your hand. Also, if you just click on the trigger (without doing the throwing move) the ball is still thrown (well, it's more falling than 

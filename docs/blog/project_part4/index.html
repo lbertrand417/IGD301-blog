@@ -31,7 +31,7 @@
   <meta itemprop="name" content="Project Part 4">
 <meta itemprop="description" content="Locomotion technique: Teleportation ball"><meta itemprop="datePublished" content="2022-02-04T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-02-04T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1878">
+<meta itemprop="wordCount" content="1977">
 <meta itemprop="keywords" content="Locomotion,VR,ball,teleportation," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
@@ -89,7 +89,7 @@
 
   
   <div class="relative max-w-5xl mx-auto px-4">
-    <img src="https://l3apq3bncl82o596k2d1ydn1-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/KATloco_5.jpg" class="rounded-lg shadow-sm w-full object-contain" />
+    <img src="http://lbertrand417.github.io/IGD301-blog/thumbnail_project1.png" class="rounded-lg shadow-sm w-full object-contain" />
     <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
       
   
@@ -127,7 +127,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      9&nbsp;minutes
+      10&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,7 +137,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      1878&nbsp;words
+      1977&nbsp;words
       
     </h5>
 
@@ -154,19 +154,35 @@ in the AttachBall() function but nothing more. It&rsquo;s possible that the erro
 I guess it must have been empty for some reason. Finally, I gave up, so my game has only a right hand version. I&rsquo;m a little disappointed because
 I thought this feature was interesting.</p>
 <p>Instead, I focused on a more important problem, the bouncing ball. I didn&rsquo;t really know how to deal with the kind of elasticity of the ball that allows
-it to bounce but after some research I discovered the existence of physics material. So I added a physic material to my bouncing ball to make it bounce.
-I also changed the assets of the sticky ball by making it slightly transparent and by giving it a bit of a slimey feel. I also set the ball speeds again so that
+it to bounce but after some research I discovered the existence of physics material. So I added a physic material to my bouncing ball to make it bounce.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/demo_bouncy_ball.gif" alt="Demo bouncy ball"></p>
+<p>I also changed the assets of the sticky ball by making it slightly transparent and by giving it a bit of a slimey feel. I also set the ball speeds again so that
 the bouncing ball can go very far (but not too far either) and the sticky ball can go less far than the petanque ball. I realize that having a sticky ball that
 can&rsquo;t go as far as the petanque ball makes things a little less physically coherent (because it feels like the sticky ball is heavier than the petanque ball) but
 I didn&rsquo;t want the sticky ball to be &ldquo;too efficient&rdquo;. Indeed, it is more precise than the petanque ball so if it can go further, the petanque ball is useless.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/demo_sticky_ball.gif" alt="Demo sticky ball"></p>
 <p>While testing throughout this session (and a bit in the previous sessions) I realized that waiting for the end of the throw was very long and made
 the locomotion quite boring. So I finally put back the system that allows to &ldquo;catch&rdquo; or change the ball in mid-air.
 I find that it makes the process more dynamic and avoids ending up outside the parkour in case of a bad throw. It also makes it easier to catch coins.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/demo_coin_trick.gif" alt="Demo coin trick"></p>
 <p>Finally, I removed the FOV reduction which is not useful here because it is a teleportation, and I added a display which informs the player about the ball he has in hand.
-Indeed, it can be complicated to understand what the ball is doing just by looking at it and, moreover, one does not necessarily look at his hand when changing the ball.
-In the same way, a small tutorial appears at the beginning of the game to inform the user about the functioning of the locomotion technique.
+Indeed, it can be complicated to understand what the ball is doing just by looking at it and, moreover, one does not necessarily look at his hand when changing the ball.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/switch_ball.gif" alt="Switch ball"></p>
+<p>In the same way, a small tutorial appears at the beginning of the game to inform the user about the functioning of the locomotion technique.
 I consciously avoided telling the user that he could cancel a throw because I want this to be a property that he finds by himself while playing.</p>
-<p>Well, now we have a functional locomotion technique! We just have to fix the last bugs and it will be finished! One problem I noticed is that the bouncing ball
+<p><img src="http://lbertrand417.github.io/IGD301-blog/intro_display.png" alt="Didacticiel"></p>
+<p>Well, now we have a functional locomotion technique! We just have to fix the last bugs and it will be finished!</p>
+<p>One bug I noticed concerns the ball change (again). I had said before that I was using Mathf.Abs to avoid having negative hints.
+But in fact I realized that the order of the balls was not right when scrolling to the left. The coefficients were -2, -1, 0, 1, 2 instead of -1, -2, 0, 1, 2.
+That&rsquo;s why I removed the Mathf.Abs and instead used a condition to know which way to go.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">if</span> (currentBall <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> increment <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>)
+{
+	currentBall <span style="color:#ff79c6">=</span> balls.Length <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>;
+} <span style="color:#ff79c6">else</span>
+{
+	currentBall <span style="color:#ff79c6">=</span> (currentBall <span style="color:#ff79c6">+</span> increment) <span style="color:#ff79c6">%</span> balls.Length;
+}
+</code></pre></div><p>Another bug I noticed is that the bouncing ball
 sometimes stops in the air (because the stop condition is based on the speed and it is possible that it reaches this speed during one of the bounces).
 However, the y-position of the user depends on the y-position of the ball. In these moments, we find ourselves flying. To solve this problem I wanted to count
 the number of collisions between the ball and the ground and take for the y-component the value at the last collision. But in fact, contrary to what I thought,

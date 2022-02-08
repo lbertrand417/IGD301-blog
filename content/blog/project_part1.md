@@ -102,7 +102,15 @@ Well, now we have a good base since we can throw a ball and teleport. However, w
 the start panel (and consequently the stages and end panels). To prevent this from happening, I created an Uncollide layer that I associated to the GameObject that contains the banner 
 as well as a Ball layer associated to my ball, and I disabled the interactions between these 2 layers. Now the ball can go through.
 
+![Ball first draft](http://lbertrand417.github.io/IGD301-blog/throw_ball_1st_draft.gif)
+
 This concludes my first session on the project. In the next session I plan to solve other problems I've noticed: sometimes the ball goes through the ground 
-(whereas the ground has a collider). Furthermore, it's very hard to start the course because the user has to collide with the banner, and my locomotion technique is a teleportation so 
+(whereas the ground has a collider). 
+
+![Mesh collider issue](http://lbertrand417.github.io/IGD301-blog/mesh_collider_issue.gif)
+
+
+Furthermore, it's very hard to start the course because the user has to collide with the banner, and my locomotion technique is a teleportation so 
 you don't necessiraly go through the collider.
 
+![Start issue](http://lbertrand417.github.io/IGD301-blog/start_issue.gif)
