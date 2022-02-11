@@ -1,6 +1,6 @@
 ---
 title: "Project Part 4"
-date: 2022-02-04
+date: 2022-01-29
 draft: false
 description: "Locomotion technique: Teleportation ball"
 tags: ["Locomotion", "VR", "ball", "teleportation"]

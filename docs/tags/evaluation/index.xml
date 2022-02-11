@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Evaluation on IGD301 - Blog</title>
+    <link>https://lbertrand417.github.io/IGD301-blog/tags/evaluation/</link>
+    <description>Recent content in Evaluation on IGD301 - Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://lbertrand417.github.io/IGD301-blog/tags/evaluation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Locomotion Evaluation</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/evaluation_technique/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/evaluation_technique/</guid>
+      <description>Locomotion technique evaluation The last step is to evaluate my locomotion technique. For this purpose, I asked 3 people to test it and I myself took part in the evaluation. The test session went as follows: a first phase of discovery, during which the player tests the locomotion (I don&amp;rsquo;t answer questions, they must discover by themselves). It lasts about 2 to 3 minutes. Then, follows a 10-minute test phase during which the player must complete the course, as many times as he wants, as quickly as possible and by catching as many coins as possible.</description>
+    </item>
+    
+  </channel>
+</rss>

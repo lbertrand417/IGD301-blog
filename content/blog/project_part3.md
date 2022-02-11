@@ -1,10 +1,10 @@
 ---
 title: "Project Part 3"
-date: 2022-02-04
+date: 2022-01-22
 draft: false
 description: "Locomotion technique: Teleportation ball"
 tags: ["Locomotion", "VR", "ball", "teleportation"]
-thumbnail: https://l3apq3bncl82o596k2d1ydn1-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/KATloco_5.jpg
+thumbnail: http://lbertrand417.github.io/IGD301-blog/thumbnail_project1.png
 ---
 
 Today my goal is to solve the problems with the coins and banners and to add the bouncing ball. As a reminder, currently the balls collide with the coins.

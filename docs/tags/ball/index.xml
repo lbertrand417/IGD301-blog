@@ -6,21 +6,39 @@
     <description>Recent content in ball on IGD301 - Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://lbertrand417.github.io/IGD301-blog/tags/ball/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://lbertrand417.github.io/IGD301-blog/tags/ball/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project Part 1</title>
-      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part1/</link>
-      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      <title>Locomotion Evaluation</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/evaluation_technique/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part1/</guid>
-      <description>It&amp;rsquo;s time to start the project. As described previously in lab 3, I have chosen to implement the teleportation ball as my locomotion technique. Even if I know that this locomotion technique is not the most adapted for the parkour provided by the teachers I still chose to make my tests by using it.
-The first step was to import the project. I didn&amp;rsquo;t encounter any problems, I simply followed the teacher&amp;rsquo;s tutorial.</description>
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/evaluation_technique/</guid>
+      <description>Locomotion technique evaluation The last step is to evaluate my locomotion technique. For this purpose, I asked 3 people to test it and I myself took part in the evaluation. The test session went as follows: a first phase of discovery, during which the player tests the locomotion (I don&amp;rsquo;t answer questions, they must discover by themselves). It lasts about 2 to 3 minutes. Then, follows a 10-minute test phase during which the player must complete the course, as many times as he wants, as quickly as possible and by catching as many coins as possible.</description>
+    </item>
+    
+    <item>
+      <title>Project Part 4</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part4/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part4/</guid>
+      <description>Today I planned to correct the trigger problem (you can bring the ball back in your hand or change it even when the ball is thrown). For that, I added a boolean which is true when the ball is thrown and which blocks the AttachBall() and ChangeBall() functions.
+I also tried to allow the user to change the hand. My idea is that each controller has a MySelect.cs script and that in LocomotionTechnique we disable/enable one or the other depending on the user&amp;rsquo;s actions.</description>
+    </item>
+    
+    <item>
+      <title>Project Part 3</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part3/</link>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part3/</guid>
+      <description>Today my goal is to solve the problems with the coins and banners and to add the bouncing ball. As a reminder, currently the balls collide with the coins. This is a problem because the coins are not supposed to be solid, and also because when you use the sticky ball you teleport onto the coin. Since the locomotion is done with the ball, I decided that the ball represents the movement of the user.</description>
     </item>
     
     <item>
       <title>Project Part 2</title>
       <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part2/</link>
-      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part2/</guid>
       <description>It&amp;rsquo;s time to get back to the project. As described in the previous post there are two major issues to address:
@@ -28,22 +46,13 @@ The first step was to import the project. I didn&amp;rsquo;t encounter any probl
     </item>
     
     <item>
-      <title>Project Part 3</title>
-      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part3/</link>
-      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      <title>Project Part 1</title>
+      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part1/</link>
+      <pubDate>Sun, 09 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part3/</guid>
-      <description>Today my goal is to solve the problems with the coins and banners and to add the bouncing ball. As a reminder, currently the balls collide with the coins. This is a problem because the coins are not supposed to be solid, and also because when you use the sticky ball you teleport onto the coin. Since the locomotion is done with the ball, I decided that the ball represents the movement of the user.</description>
-    </item>
-    
-    <item>
-      <title>Project Part 4</title>
-      <link>https://lbertrand417.github.io/IGD301-blog/blog/project_part4/</link>
-      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part4/</guid>
-      <description>Today I planned to correct the trigger problem (you can bring the ball back in your hand or change it even when the ball is thrown). For that, I added a boolean which is true when the ball is thrown and which blocks the AttachBall() and ChangeBall() functions.
-I also tried to allow the user to change the hand. My idea is that each controller has a MySelect.cs script and that in LocomotionTechnique we disable/enable one or the other depending on the user&amp;rsquo;s actions.</description>
+      <guid>https://lbertrand417.github.io/IGD301-blog/blog/project_part1/</guid>
+      <description>It&amp;rsquo;s time to start the project. As described previously in lab 3, I have chosen to implement the teleportation ball as my locomotion technique. Even if I know that this locomotion technique is not the most adapted for the parkour provided by the teachers I still chose to make my tests by using it.
+The first step was to import the project. I didn&amp;rsquo;t encounter any problems, I simply followed the teacher&amp;rsquo;s tutorial.</description>
     </item>
     
   </channel>

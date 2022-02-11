@@ -6,7 +6,7 @@
   <link rel="icon" href="/favicon.svg">
 
   <title>
-    Project Part 3 - IGD301 - Blog
+    Locomotion Evaluation - IGD301 - Blog
   </title>
   <meta name="description" content="Locomotion technique: Teleportation ball" /><meta name="generator" content="Hugo 0.91.1" /><link
     rel="stylesheet"
@@ -16,23 +16,23 @@
   
   
 
-  <meta property="og:title" content="Project Part 3" />
+  <meta property="og:title" content="Locomotion Evaluation" />
 <meta property="og:description" content="Locomotion technique: Teleportation ball" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lbertrand417.github.io/IGD301-blog/blog/project_part3/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-01-22T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-01-22T00:00:00+00:00" />
+<meta property="og:url" content="https://lbertrand417.github.io/IGD301-blog/blog/evaluation_technique/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-01-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-31T00:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Project Part 3"/>
+<meta name="twitter:title" content="Locomotion Evaluation"/>
 <meta name="twitter:description" content="Locomotion technique: Teleportation ball"/>
 
-  <meta itemprop="name" content="Project Part 3">
-<meta itemprop="description" content="Locomotion technique: Teleportation ball"><meta itemprop="datePublished" content="2022-01-22T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-01-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="398">
-<meta itemprop="keywords" content="Locomotion,VR,ball,teleportation," />
+  <meta itemprop="name" content="Locomotion Evaluation">
+<meta itemprop="description" content="Locomotion technique: Teleportation ball"><meta itemprop="datePublished" content="2022-01-31T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-01-31T00:00:00+00:00" />
+<meta itemprop="wordCount" content="761">
+<meta itemprop="keywords" content="Locomotion,VR,ball,teleportation,Evaluation," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
   <a href="https://lbertrand417.github.io/IGD301-blog/" class="capitalize font-extrabold text-2xl">
@@ -93,7 +93,7 @@
     <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
       
   
-    January 22, 2022
+    January 31, 2022
   
 
 
@@ -103,7 +103,7 @@
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
-    <h1 class="text-2xl font-bold mb-2">Project Part 3</h1>
+    <h1 class="text-2xl font-bold mb-2">Locomotion Evaluation</h1>
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -115,7 +115,7 @@
       </svg>
       Posted on 
   
-    January 22, 2022
+    January 31, 2022
   
 
 
@@ -127,7 +127,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      2&nbsp;minutes
+      4&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,41 +137,51 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      398&nbsp;words
+      761&nbsp;words
       
     </h5>
 
-    <p>Today my goal is to solve the problems with the coins and banners and to add the bouncing ball. As a reminder, currently the balls collide with the coins.
-This is a problem because the coins are not supposed to be solid, and also because when you use the sticky ball you teleport onto the coin.
-Since the locomotion is done with the ball, I decided that the ball represents the movement of the user. Therefore, the player must be able to catch coins
-with the balls and the balls themselves must trigger the passage under the banners. For that, I took the part of the code already present initially for the management
-of the coins and banner, and I added it to my script Ball.cs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">OnTriggerEnter</span>(Collider other)
-{
-	<span style="color:#ff79c6">if</span> (other.CompareTag(<span style="color:#f1fa8c">&#34;banner&#34;</span>))
-	{
-		<span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>AudioSource<span style="color:#ff79c6">&gt;</span>().Play();
-		parkourCounter.locomotionTech.stage <span style="color:#ff79c6">=</span> other.gameObject.name;
-		parkourCounter.isStageChange <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">true</span>;
-	} <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (other.CompareTag(<span style="color:#f1fa8c">&#34;coin&#34;</span>))
-	{
-		parkourCounter.coinCount <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>;
-		<span style="color:#ff79c6">this</span>.GetComponent<span style="color:#ff79c6">&lt;</span>AudioSource<span style="color:#ff79c6">&gt;</span>().Play();
-		other.gameObject.SetActive(<span style="color:#8be9fd;font-style:italic">false</span>);
-	}
-	<span style="color:#6272a4">// These are for the game mechanism.
-</span><span style="color:#6272a4"></span>}
-</code></pre></div><p><img src="http://lbertrand417.github.io/IGD301-blog/coin_issue_solved.gif" alt="Coin issue solved"></p>
-<p>Then, I used the same process as what we had done in the TP Roll-a-ball so that there is no collision but a trigger.
-To do this, I added a rigibody to the coins, deactivated the gravity, and activated the kinematics. I also checked isTrigger in their collider in order to
-activate the OnTriggerEnter() function of the ball. After some trial and error due to carelessness I finally got a working result.
-Finally I used the same concept for the banner. I removed the Uncollide and Ball layers that I had initially created and I added a RigidBody to the objects
-containing the banners by putting the same parameters as for the coins. Now, we can start the steps by throwing the ball as well as retrieving coins.</p>
-<p><img src="http://lbertrand417.github.io/IGD301-blog/demo_start.gif" alt="Demo start"></p>
-<p>I didn&rsquo;t do much more today. Next time I will correct other issues that I detected : when you throw the ball and use the trigger again during the throwing,
-the ball comes back to your hand. Also, if you just click on the trigger (without doing the throwing move) the ball is still thrown (well, it&rsquo;s more falling than
-being thrown but you get the idea). Same when you try to change the ball when it&rsquo;s already been thrown. I will also add the mechanics for the bounciness of the bouncy ball
-because right now it doesn&rsquo;t bounce. Finally, I will code the part to change hands (for lefthanded players).</p>
+    <h1 id="locomotion-technique-evaluation">Locomotion technique evaluation</h1>
+<p>The last step is to evaluate my locomotion technique. For this purpose, I asked 3 people to test it and I myself took part in the evaluation.
+The test session went as follows: a first phase of discovery, during which the player tests the locomotion (I don&rsquo;t answer questions, they must discover by themselves).
+It lasts about 2 to 3 minutes. Then, follows a 10-minute test phase during which the player must complete the course, as many times as he wants,
+as quickly as possible and by catching as many coins as possible. Finally, he must answer a questionnaire with the following questions:
+&ldquo;On a scale from 1 to 10, how much motion sickness do you perceive right now&rdquo;, &ldquo;On a scale from 1 to 10, how present did you feel in the virtual world&rdquo;,
+&ldquo;On a scale from 1 to 10, how much fun did you have during the task&rdquo;, 10 being the highest score. They also had to give in a few words their opinion on
+the locomotion technique as well as compare it to other locomotion techniques they had tested elsewhere.</p>
+<p>The graph below summarizes the scores given to the 3 questions:</p>
+<p>Overall, players din&rsquo;t experience motion sickness at all. This result was predictable since we use teleportation. Concerning the presence,
+the results are rather low which was also predictable since it&rsquo;s the disadvantage of teleportation. However, the feedback is positive because most of them had
+a lot of fun, even if one of them didn&rsquo;t like it because he found the system a bit redundant.</p>
+<p>The graphs below show a comparison between my locomotion and that of the other students. The presence of my locomotion is lower than that of the other students,
+which again was predictanle since I am the only one using teleportation, and we know that presence is diminished compared to continuous movement in the virtual world.
+The lack of presence is replaced by the absence of motion sickness, which is found in many of the other students' locomotion.
+This is one of the major assets of my locomotion technique. Especially when you look at the fun graph, the scores between my locomotion and theirs are similar.
+Overall, fun without motion sickness!</p>
+<p>Concerning the average travel time, we notice 3 categories: fast locomotion techniques, normal locomotion techniques, and slow locomotion techniques.
+I thought that mine would be part of the slow category because the balls do not allow big and fast movements but finally it is part of the normal
+category. Finally, the average accuracy is rather low compared to the other locomotions. While discussing with the participants I discovered that they didn&rsquo;t find
+the little trick that allows to catch the ball in mid-air. And it seems to me that it&rsquo;s quite complicated to go fast AND to be accurate without knowing this trick.
+10 minutes were probably not enough to discover it but I am sure that if the player plays it longer he will realize it by himself.</p>
+<p>Other feedback I got from my participants included:</p>
+<ul>
+<li>The presence is not as good as for the continuous locomotion techniques but the realism of the throws increases it</li>
+<li>The throws are realistic but the sticky ball seems heavier than the petanque ball and it is hard to aim with the bouncy ball</li>
+</ul>
+<p>I already talked about the fact that the sticky ball seemed heavier in my implementation. I&rsquo;d have to fix that while keeping the petanque ball useful.
+Concerning the bouncy ball, I was trying to make it less precise to force the user to change ball for throws that require more precision but maybe it is not precise enough.</p>
+<ul>
+<li>This locomotion technique is not adapted to the race</li>
+</ul>
+<p>For this I already suspected it but I hadn&rsquo;t thought this technique to be used in racing games.</p>
+<ul>
+<li>Most of the players used the sticky ball only</li>
+</ul>
+<p>I think it&rsquo;s mainly due to the ignorance of the trick because it&rsquo;s the most precise but it doesn&rsquo;t allow to go fast.
+It would be necessary to make the same test but by making the player aware of the trick to see if they still use the sticky ball only. Personally, knowing the trick,
+I found the petanque ball more optimal.</p>
+<p>Overall, the participants were quite satisfied with the locomotion technique. There are still things to be adapted to make it even more realistic and funny
+(for example by adding objects to retrieve, to be able to use certain types of ball such as a golf ball) but this technique still seems viable.</p>
 
   </article><div class="bg-blue-100 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

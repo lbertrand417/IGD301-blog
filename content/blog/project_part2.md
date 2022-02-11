@@ -1,10 +1,10 @@
 ---
 title: "Project Part 2"
-date: 2022-02-04
+date: 2022-01-19
 draft: false
 description: "Locomotion technique: Teleportation ball"
 tags: ["Locomotion", "VR", "ball", "teleportation"]
-thumbnail: https://l3apq3bncl82o596k2d1ydn1-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/KATloco_5.jpg
+thumbnail: http://lbertrand417.github.io/IGD301-blog/thumbnail_project1.png
 ---
 
 

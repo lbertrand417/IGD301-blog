@@ -1,10 +1,10 @@
 ---
 title: "Project Part 1"
-date: 2022-02-04
+date: 2022-01-09
 draft: false
 description: "Locomotion technique: Teleportation ball"
 tags: ["Locomotion", "VR", "ball", "teleportation"]
-thumbnail: https://l3apq3bncl82o596k2d1ydn1-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/KATloco_5.jpg
+thumbnail: http://lbertrand417.github.io/IGD301-blog/thumbnail_project1.png
 ---
 
 It's time to start the project. As described previously in lab 3, I have chosen to implement the teleportation ball as my locomotion technique. 
