@@ -18,7 +18,7 @@ mixed reality is also subject to abuse. The Hyper Reality video presents a dysto
 
 As it is already the case with existing technologies, social networks tend to transform relationships into something virtual. People don't talk to each other on the street anymore, 
 they look at their phones and talk with people who may be on the other side of the country. Also, more and more people are meeting on dating apps and not in real life activities.
-Now, imagine a world where dating apps are adapted to mixed reality. More than that, the user could create his own partner and do all sorts of activities with him.  
+Now, imagine a world where dating apps are adapted to mixed reality. More than that, the user could create his own virtual partner and do all sorts of activities with him.  
 There would be a huge problem in reproduction, as it already exists in Japan. People would close themselves in their world, with their virtual partner. 
 Indeed, why bother building relationships when you can create your own ideal partner? People would then live in a world separated from reality and would only have relationships 
 with avatars invented from scratch. 
@@ -56,8 +56,8 @@ Then he talks about the technology that he considers to be the Ultimate Display.
 handcuffs that can really constrain, or a bullet that can really kill. It is interesting to think about where his Ultimate Display fits into 
 Milgram's Reality-Virtuality Continuum. Let's start with reality. The ultimate display cannot be reality in the sense that it is the computer that creates the object. 
 In this sense, we have a virtual object. It is not virtual reality either because the object created is placed in a real environment of which the user is aware. 
-It remains therefore augmented reality and augmented virtuality. I personally think that its Ultimate Display is an area between these two points. 
-Indeed, as he describes it, the virtual looks as real as the real itself. Therefore it is a perfect mix between virtual and real. We can say at the same time 
+It remains therefore augmented reality and augmented virtuality. I personally think that his Ultimate Display is an area between these two points. 
+Indeed, as he describes it, the virtual looks as real as the reality itself. Therefore it is a perfect mix between virtual and real. We can say at the same time 
 that it is augmented reality (we make appear an extremely real virtual object in a real environment) or augmented virtuality (the objects are virtual but the user can
 interact with them and the sensations and the effects on him are real. He can really sit on the chair, he can really die from the virtual bullet,...). 
 

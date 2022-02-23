@@ -19,17 +19,23 @@ the locomotion technique as well as compare it to other locomotion techniques th
 
 The graph below summarizes the scores given to the 3 questions:
 
-
+![Ball locomotion results](http://lbertrand417.github.io/IGD301-blog/BallLocomotionResults.png)
 
 Overall, players din't experience motion sickness at all. This result was predictable since we use teleportation. Concerning the presence, 
 the results are rather low which was also predictable since it's the disadvantage of teleportation. However, the feedback is positive because most of them had 
 a lot of fun, even if one of them didn't like it because he found the system a bit redundant. 
 
 The graphs below show a comparison between my locomotion and that of the other students. The presence of my locomotion is lower than that of the other students, 
-which again was predictanle since I am the only one using teleportation, and we know that presence is diminished compared to continuous movement in the virtual world. 
+which again was predictable since I am the only one using teleportation, and we know that presence is diminished compared to continuous movement in the virtual world. 
 The lack of presence is replaced by the absence of motion sickness, which is found in many of the other students' locomotion. 
 This is one of the major assets of my locomotion technique. Especially when you look at the fun graph, the scores between my locomotion and theirs are similar. 
 Overall, fun without motion sickness!
+
+![Presence](http://lbertrand417.github.io/IGD301-blog/Presence.png)
+![Motion sickness](http://lbertrand417.github.io/IGD301-blog/Sickness.png)
+![Enjoyment](http://lbertrand417.github.io/IGD301-blog/Enjoyment.png)
+![Round time](http://lbertrand417.github.io/IGD301-blog/RoundTime.png)
+![Accuracy](http://lbertrand417.github.io/IGD301-blog/Accuracy.png)
 
 Concerning the average travel time, we notice 3 categories: fast locomotion techniques, normal locomotion techniques, and slow locomotion techniques. 
 I thought that mine would be part of the slow category because the balls do not allow big and fast movements but finally it is part of the normal 

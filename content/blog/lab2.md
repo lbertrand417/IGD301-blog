@@ -223,10 +223,10 @@ public class CameraController : MonoBehaviour
 }
 ```
 
-The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.
+The last step is to build and here we have our first working game! Here is a small demonstration of the result.
 
 
-![Game result](https://raw.githubusercontent.com/ruthnaebeck/rollABall/master/readme/Demo.gif?raw=true)
+![Game result](http://lbertrand417.github.io/IGD301-blog/demo_roll_a_ball.gif)
 
 
 ## VR version
@@ -284,7 +284,7 @@ other.gameObject.name == "roll-a-ball"
 so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball 
 object so there was never a trigger.
 
-Our final code for MySelect.cs is:
+The final code for MySelect.cs is:
 
 ```c++
 using System.Collections;

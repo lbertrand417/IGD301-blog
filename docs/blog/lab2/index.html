@@ -31,7 +31,7 @@
   <meta itemprop="name" content="Second lab">
 <meta itemprop="description" content="Roll-a-ball"><meta itemprop="datePublished" content="2021-12-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2066">
+<meta itemprop="wordCount" content="2064">
 <meta itemprop="keywords" content="Unity,VR,Tutorial,Roll-a-ball," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-around md:justify-between gap-4 flex-wrap p-6 mx-auto">
@@ -137,7 +137,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      2066&nbsp;words
+      2064&nbsp;words
       
     </h5>
 
@@ -312,8 +312,8 @@ and makes sure that this offset is constant throughout the game.</p>
         transform.position <span style="color:#ff79c6">=</span> player.transform.position <span style="color:#ff79c6">+</span> offset;
     }
 }
-</code></pre></div><p>The last step is to create the build and here we have our first working game! Here is a small demonstration of the result.</p>
-<p><img src="https://raw.githubusercontent.com/ruthnaebeck/rollABall/master/readme/Demo.gif?raw=true" alt="Game result"></p>
+</code></pre></div><p>The last step is to build and here we have our first working game! Here is a small demonstration of the result.</p>
+<p><img src="http://lbertrand417.github.io/IGD301-blog/demo_roll_a_ball.gif" alt="Game result"></p>
 <h2 id="vr-version">VR version</h2>
 <p>Now that we have a working game in Unity, it&rsquo;s time to adapt it to VR. To do this, let&rsquo;s start by creating another 3D project.
 Then we need to import the plug-in needed for VR Oculus XR Plugin, add the necessary assets (Oculus integration found in the Asset Store)
@@ -353,7 +353,7 @@ on the speed of the controller.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">other.gameObject.name <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;roll-a-ball&#34;</span> 
 </code></pre></div><p>so it never entered the loop. Then I forgot to change the size of the box collider I added in the roll-a-ball
 object so there was never a trigger.</p>
-<p>Our final code for MySelect.cs is:</p>
+<p>The final code for MySelect.cs is:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#ff79c6">using</span> System.Collections;
 <span style="color:#ff79c6">using</span> System.Collections.Generic;
 <span style="color:#ff79c6">using</span> UnityEngine;

@@ -77,7 +77,7 @@ For places that have enough space we could further improve the movement by allow
 {{< youtube UZqK1qzkWUI >}}
 
 The metrics to evaluate would be accuracy as the direction should be coherent with the motion of the user, the spatial awareness because we use a smooth locomotion technique,
-information gathering and presence. Presence is a really important metric as it is the reason which researchers develop smooth locomotion technique even if it induces 
+information gathering and presence. Presence is a really important metric as it is the reason why researchers develop smooth locomotion technique even if it induces 
 motion sickness. Thus, we also need to evaluate motion sickness as the user doesn't move as much in the real world as in the virtual world.
 
 
@@ -119,7 +119,7 @@ The first idea seems better in terms of presence because the user could interact
 The user should also be able to exchange the hand ball according to his preference using a button.
 Finally, I imagined that the user has to press a button to actually teleport at the ball's position so that if the throw is bad he can try again.
 
-Regarding the movement that the user has to do, I imagined that he has to simulate a ball launch, without having to press any buttons. 
+Regarding the movement that the user has to do, I imagined that he has to simulate a ball throw, without having to press any buttons. 
 However, due to the limitations of the headset camera field, this seems complicated. That's why I think that the user will have to press a button 
 (the trigger for example) at the moment when the ball should be thrown. Also, to make the game easier it could be interesting to show the future trajectory of the ball before the throw. 
 In this case, instead of using the acceleration of the controller at the moment of the throw, we would use only the position of the controller and we would deduce the force of the throw. 
@@ -130,7 +130,7 @@ Thus, whatever the way the user throws the ball, it will go to the indicated poi
 ![Bowling ball](http://lbertrand417.github.io/IGD301-blog/bowling.gif)
 
 Concerning the evaluation of the locomotion method, I would like to evaluate the fun of the user through a questionnaire and compare it to the fun of a simple teleportation. 
-I also want to study the ease of learning and ease of use, which are two criteria related to fun. Indeed, if the tool is too hard or too easy to learn or use it becomes less fun. 
+I also want to study the ease of learning and ease of use, which are two criteria related to fun. Indeed, if the tool is too hard or too easy to learn or use it becomes less funny. 
 Finally, I want to study the precision since the goal is to have more or less precise balls according to their type. 
 For this, I could ask the user to try to aim at an area and evaluate the success rate according to the type of ball.
 
